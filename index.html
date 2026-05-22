@@ -60,14 +60,37 @@
        ========================================================================= -->
   <div id="preloader">
     <div class="preloader-bg-animation"></div>
+    <div class="preloader-grid"></div>
+    <div class="preloader-beam preloader-beam-a"></div>
+    <div class="preloader-beam preloader-beam-b"></div>
     <div class="preloader-logo-container">
+      <div class="preloader-orbit preloader-orbit-one"></div>
+      <div class="preloader-orbit preloader-orbit-two"></div>
       <div class="preloader-logo-shell mx-auto">
         <img src="Logo.jpeg" class="preloader-logo-img" alt="Alianza Tributaria y Legal">
       </div>
       <h1 class="preloader-text">ALIANZA</h1>
       <p class="preloader-tagline">Tributaria y Legal</p>
+      <div class="preloader-status-row">
+        <div class="preloader-status-card">
+          <span>Lectura</span>
+          <strong>Fiscal</strong>
+        </div>
+        <div class="preloader-status-card">
+          <span>Blindaje</span>
+          <strong>Legal</strong>
+        </div>
+        <div class="preloader-status-card">
+          <span>Ruta</span>
+          <strong>Corporativa</strong>
+        </div>
+      </div>
       <div class="preloader-progress-bar mx-auto">
         <div class="preloader-progress-fill"></div>
+      </div>
+      <div class="preloader-progress-meta">
+        <span>Preparando experiencia</span>
+        <span class="preloader-progress-value">00%</span>
       </div>
     </div>
   </div>
@@ -338,7 +361,7 @@
 
         <div class="lg:col-span-7">
           <div class="editorial-gallery">
-            <figure class="gallery-panel gallery-panel-large image-slot reveal-up">
+            <figure class="gallery-panel gallery-panel-feature image-slot reveal-up">
               <img src="images/service_legal.png" alt="Equipo legal revisando documentación corporativa">
               <figcaption>
                 <span>Equipo consultor</span>
@@ -346,7 +369,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel image-slot reveal-up">
+            <figure class="gallery-panel gallery-panel-portrait image-slot reveal-up">
               <img src="images/service_corporate.png" alt="Estructuración societaria y expansión empresarial">
               <figcaption>
                 <span>Expansión</span>
@@ -354,7 +377,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel gallery-panel-logo reveal-up">
+            <figure class="gallery-panel gallery-panel-logo gallery-panel-compact reveal-up">
               <img src="Logo.jpeg" alt="Logo Alianza en tarjeta de identidad visual">
               <figcaption>
                 <span>Identidad</span>
@@ -362,7 +385,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel image-slot reveal-up">
+            <figure class="gallery-panel gallery-panel-wide image-slot reveal-up">
               <img src="images/hero_bg.png" alt="Planificación estratégica tributaria">
               <figcaption>
                 <span>Diagnóstico</span>
@@ -617,7 +640,7 @@
         <!-- Columna de Métricas (Contadores Animados con GSAP) -->
         <div class="lg:col-span-6 space-y-6">
           <div class="values-visual-grid reveal-up">
-            <figure class="gallery-panel gallery-panel-large image-slot values-visual-main">
+            <figure class="gallery-panel gallery-panel-feature image-slot values-visual-main">
               <img src="images/service_legal.png" alt="Mesa de trabajo con revisión legal y tributaria">
               <figcaption>
                 <span>Criterio aplicado</span>
@@ -625,7 +648,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel image-slot values-visual-side">
+            <figure class="gallery-panel gallery-panel-wide image-slot values-visual-side">
               <img src="images/service_tax.png" alt="Documentos y análisis tributario">
               <figcaption>
                 <span>Precisión</span>
@@ -633,7 +656,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel gallery-panel-logo values-visual-side">
+            <figure class="gallery-panel gallery-panel-logo gallery-panel-compact values-visual-side">
               <img src="Logo.jpeg" alt="Identidad de Alianza">
               <figcaption>
                 <span>Presencia</span>
@@ -642,7 +665,7 @@
             </figure>
           </div>
 
-          <div class="grid grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           
           <div class="glass-panel p-8 text-center border-white/5">
             <span class="metric-number text-4xl sm:text-5xl font-extrabold text-gold tracking-tight" data-target="12" data-suffix="+">12+</span>
@@ -747,7 +770,7 @@
           </div>
 
           <div class="contact-visual-stack mt-10">
-            <figure class="gallery-panel gallery-panel-large image-slot">
+            <figure class="gallery-panel gallery-panel-feature image-slot contact-visual-primary">
               <img src="images/hero_bg.png" alt="Reunión estratégica con documentos legales">
               <figcaption>
                 <span>Sesión inicial</span>
@@ -755,7 +778,7 @@
               </figcaption>
             </figure>
 
-            <figure class="gallery-panel image-slot">
+            <figure class="gallery-panel gallery-panel-wide image-slot contact-visual-secondary">
               <img src="images/service_corporate.png" alt="Expansión corporativa y estructura empresarial">
               <figcaption>
                 <span>Expansión</span>
