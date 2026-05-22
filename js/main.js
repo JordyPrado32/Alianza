@@ -175,10 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 4. MICROINTERACCIONES VISUALES
-  const spotlightSection = document.querySelector('[data-spotlight]');
-  const spotlight = document.querySelector('.hero-spotlight');
+  document.querySelectorAll('[data-spotlight]').forEach((spotlightSection) => {
+    const spotlight = spotlightSection.querySelector('.hero-spotlight');
+    if (!spotlight) return;
 
-  if (spotlightSection && spotlight) {
     spotlightSection.addEventListener('pointermove', (event) => {
       const rect = spotlightSection.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width) * 100;
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       spotlight.style.setProperty('--mx', `${x}%`);
       spotlight.style.setProperty('--my', `${y}%`);
     });
-  }
+  });
 
   const tiltCards = document.querySelectorAll('.service-card');
 

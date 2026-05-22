@@ -217,12 +217,18 @@
   <!-- =========================================================================
        4. SECCIÓN SERVICIOS (GRID INTERACTIVO, CARTAS PREMIUM CON IMÁGENES)
        ========================================================================= -->
-  <section id="servicios" class="py-24 bg-gradient-to-b from-obsidian-deep to-obsidian relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="servicios" class="section-shell section-shell-services py-24 relative z-10 overflow-hidden" data-spotlight>
+    <div class="hero-gradient-mesh section-gradient-mesh"></div>
+    <div class="hero-grid-overlay section-grid-overlay"></div>
+    <div class="hero-spotlight section-spotlight"></div>
+    <div class="section-bg-media section-bg-media-services">
+      <img src="images/service_tax.png" alt="" aria-hidden="true">
+    </div>
+    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Encabezado de la Sección -->
       <div class="text-center mb-16 reveal-up">
-        <h2 class="text-xs font-bold tracking-widest text-gold uppercase mb-3">Lo que resolvemos</h2>
+        <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Lo que resolvemos</h2>
         <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">Tres frentes. Una sola estrategia.</h3>
         <div class="w-16 h-1 bg-gold mx-auto rounded-full mb-6"></div>
         <p class="text-slate-300 max-w-2xl mx-auto font-light text-base">
@@ -297,12 +303,18 @@
   <!-- =========================================================================
        5. SECCIÓN EXPERIENCIA VISUAL (ESPACIOS PARA IMÁGENES)
        ========================================================================= -->
-  <section id="experiencia" class="visual-lab-section py-24 bg-obsidian relative z-10 overflow-hidden">
+  <section id="experiencia" class="section-shell section-shell-experience visual-lab-section py-24 relative z-10 overflow-hidden" data-spotlight>
+    <div class="hero-gradient-mesh section-gradient-mesh"></div>
+    <div class="hero-grid-overlay section-grid-overlay"></div>
+    <div class="hero-spotlight section-spotlight"></div>
+    <div class="section-bg-media section-bg-media-experience">
+      <img src="images/service_legal.png" alt="" aria-hidden="true">
+    </div>
     <div class="section-orbit section-orbit-left"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5 reveal-up">
-          <span class="text-xs font-bold tracking-widest text-gold uppercase mb-3 block">Experiencia Alianza</span>
+          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3 block">Experiencia Alianza</span>
           <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Una página con espacio para mostrar lo que normalmente queda oculto.</h3>
           <p class="text-slate-300 font-light leading-relaxed mb-8">
             Esta sección está pensada para convertir la web en una vitrina viva: fotos del equipo, reuniones, documentos, casos de expansión o imágenes de clientes autorizadas. Cada bloque está listo para reemplazarse por material real.
@@ -366,29 +378,70 @@
   <!-- =========================================================================
        6. SECCIÓN SIMULADOR TRIBUTARIO / DIAGNÓSTICO INTERACTIVO
        ========================================================================= -->
-  <section id="diagnostico" class="py-24 bg-obsidian relative z-10">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-panel p-8 sm:p-12 relative overflow-hidden border border-white/10 shadow-2xl reveal-up">
+  <section id="diagnostico" class="section-shell section-shell-diagnostic py-24 relative z-10 overflow-hidden" data-spotlight>
+    <div class="hero-gradient-mesh section-gradient-mesh"></div>
+    <div class="hero-grid-overlay section-grid-overlay"></div>
+    <div class="hero-spotlight section-spotlight"></div>
+    <div class="section-bg-media section-bg-media-diagnostic">
+      <img src="images/hero_bg.png" alt="" aria-hidden="true">
+    </div>
+    <div class="section-content max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel sim-shell p-8 sm:p-12 relative overflow-hidden border border-white/10 shadow-2xl reveal-up">
+        <div class="sim-shell-glow sim-shell-glow-a"></div>
+        <div class="sim-shell-glow sim-shell-glow-b"></div>
+        <div class="sim-panel-corner sim-panel-corner-tl"></div>
+        <div class="sim-panel-corner sim-panel-corner-tr"></div>
+        <div class="sim-panel-corner sim-panel-corner-bl"></div>
+        <div class="sim-panel-corner sim-panel-corner-br"></div>
         
         <!-- Detalles visuales de fondo -->
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal via-gold to-teal"></div>
+        <div class="sim-shell-headerline">
+          <span>Expediente 01</span>
+          <span>Lectura en menos de 90 segundos</span>
+        </div>
 
         <!-- Encabezado del Asistente -->
         <div class="text-center mb-8">
-          <span class="text-xs font-bold tracking-widest text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20">Herramienta Interactiva</span>
+          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20">Herramienta Interactiva</span>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-4">Diagnóstico Preliminar Societario y Fiscal</h3>
           <p class="text-sm text-slate-300 mt-2 font-light">
             Responda 3 preguntas básicas y nuestro algoritmo configurará las prioridades estratégicas y el régimen ideal para su negocio en Ecuador.
           </p>
         </div>
 
+        <div class="sim-meta-board mb-10">
+          <div class="sim-meta-card">
+            <span>Radar</span>
+            <strong>Fiscal + societario</strong>
+            <p>Leemos estructura, facturación y urgencia principal.</p>
+          </div>
+          <div class="sim-meta-card">
+            <span>Salida</span>
+            <strong>Ruta sugerida</strong>
+            <p>Recibe un enfoque inicial antes de agendar la reunión.</p>
+          </div>
+        </div>
+
         <!-- Barra de Progreso del Simulador -->
-        <div class="flex items-center justify-between max-w-md mx-auto mb-12 relative">
-          <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-white/10 z-0"></div>
-          <div class="sim-progress-node active z-10 font-bold" id="node-1">1</div>
-          <div class="sim-progress-node z-10" id="node-2">2</div>
-          <div class="sim-progress-node z-10" id="node-3">3</div>
-          <div class="sim-progress-node z-10" id="node-4">✓</div>
+        <div class="sim-progress-track mb-12">
+          <div class="sim-progress-line"></div>
+          <div class="sim-progress-stop">
+            <div class="sim-progress-node active z-10 font-bold" id="node-1">1</div>
+            <span>Perfil</span>
+          </div>
+          <div class="sim-progress-stop">
+            <div class="sim-progress-node z-10" id="node-2">2</div>
+            <span>Ingresos</span>
+          </div>
+          <div class="sim-progress-stop">
+            <div class="sim-progress-node z-10" id="node-3">3</div>
+            <span>Desafío</span>
+          </div>
+          <div class="sim-progress-stop">
+            <div class="sim-progress-node z-10" id="node-4">✓</div>
+            <span>Ruta</span>
+          </div>
         </div>
 
         <!-- Formulario/Contenedor del Simulador -->
@@ -396,17 +449,24 @@
           
           <!-- PASO 1: Perfil de Cliente -->
           <div class="sim-step active" data-step="1">
-            <h4 class="text-lg font-bold text-center text-white mb-6">1. Seleccione el perfil jurídico de su negocio</h4>
+            <div class="sim-step-heading">
+              <span>Paso 1</span>
+              <h4 class="text-lg font-bold text-center text-white mb-2">Seleccione el perfil jurídico de su negocio</h4>
+              <p>Elegimos la base sobre la que conviene estructurar impuestos, obligaciones y defensa.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div class="sim-option-card" data-step="perfil" data-value="persona">
+                <span class="sim-option-eyebrow">Perfil base</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Persona Natural</h5>
                 <p class="text-xs text-slate-400 font-light">Profesionales independientes, consultores, médicos, o comercio menor.</p>
               </div>
               <div class="sim-option-card" data-step="perfil" data-value="empresa">
+                <span class="sim-option-eyebrow">Estructura local</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Empresa Local (Pyme)</h5>
                 <p class="text-xs text-slate-400 font-light">Sociedades constituidas en Ecuador, S.A., Cía. Ltda., o nuevas S.A.S.</p>
               </div>
               <div class="sim-option-card" data-step="perfil" data-value="extranjero">
+                <span class="sim-option-eyebrow">Entrada al mercado</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Multinacional / Extranjero</h5>
                 <p class="text-xs text-slate-400 font-light">Inversionistas buscando abrir sucursales o expandir capital en el país.</p>
               </div>
@@ -418,21 +478,29 @@
 
           <!-- PASO 2: Ingresos Anuales Estimados -->
           <div class="sim-step" data-step="2">
-            <h4 class="text-lg font-bold text-center text-white mb-6">2. Rango aproximado de facturación anual</h4>
+            <div class="sim-step-heading">
+              <span>Paso 2</span>
+              <h4 class="text-lg font-bold text-center text-white mb-2">Rango aproximado de facturación anual</h4>
+              <p>Con este dato afinamos régimen, carga operativa y nivel de riesgo fiscal.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="sim-option-card" data-step="ingresos" data-value="popular">
+                <span class="sim-option-eyebrow">Escala inicial</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Menos de $10,000 USD</h5>
                 <p class="text-xs text-slate-400 font-light">Negocios populares o microempresarios de bajo volumen.</p>
               </div>
               <div class="sim-option-card" data-step="ingresos" data-value="pequeno">
+                <span class="sim-option-eyebrow">Crecimiento temprano</span>
                 <h5 class="font-bold text-white mb-2 text-sm">$10,000 USD - $20,000 USD</h5>
                 <p class="text-xs text-slate-400 font-light">Emprendimientos en crecimiento (posible régimen RIMPE).</p>
               </div>
               <div class="sim-option-card" data-step="ingresos" data-value="mediano">
+                <span class="sim-option-eyebrow">Pyme activa</span>
                 <h5 class="font-bold text-white mb-2 text-sm">$20,000 USD - $300,000 USD</h5>
                 <p class="text-xs text-slate-400 font-light">Pymes consolidadas, régimen general o RIMPE emprendedor alto.</p>
               </div>
               <div class="sim-option-card" data-step="ingresos" data-value="gran">
+                <span class="sim-option-eyebrow">Alta exposición</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Más de $300,000 USD</h5>
                 <p class="text-xs text-slate-400 font-light">Régimen general obligatorio, grandes sociedades y contribuyentes.</p>
               </div>
@@ -445,21 +513,29 @@
 
           <!-- PASO 3: Mayor Necesidad / Desafío -->
           <div class="sim-step" data-step="3">
-            <h4 class="text-lg font-bold text-center text-white mb-6">3. ¿Cuál es su principal necesidad actual?</h4>
+            <div class="sim-step-heading">
+              <span>Paso 3</span>
+              <h4 class="text-lg font-bold text-center text-white mb-2">¿Cuál es su principal necesidad actual?</h4>
+              <p>Priorizamos el primer frente de ataque para que la reunión llegue con foco.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="sim-option-card" data-step="desafio" data-value="planificacion">
+                <span class="sim-option-eyebrow">Optimizar</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Planificación Tributaria</h5>
                 <p class="text-xs text-slate-400 font-light">Ahorro impositivo legal, reestructuración y deducciones.</p>
               </div>
               <div class="sim-option-card" data-step="desafio" data-value="constitucion">
+                <span class="sim-option-eyebrow">Constituir</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Constitución y RUC</h5>
                 <p class="text-xs text-slate-400 font-light">Crear empresa rápido, abrir cuentas bancarias y patentes.</p>
               </div>
               <div class="sim-option-card" data-step="desafio" data-value="defensa">
+                <span class="sim-option-eyebrow">Defender</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Defensa Tributaria (Auditorías)</h5>
                 <p class="text-xs text-slate-400 font-light">Afrontar glosas del SRI, requerimientos de control o multas.</p>
               </div>
               <div class="sim-option-card" data-step="desafio" data-value="nómina">
+                <span class="sim-option-eyebrow">Operar</span>
                 <h5 class="font-bold text-white mb-2 text-sm">Contabilidad & Nómina Mensual</h5>
                 <p class="text-xs text-slate-400 font-light">Externalización contable, presentación de balances e IESS.</p>
               </div>
@@ -472,8 +548,11 @@
 
           <!-- PASO 4: Resultados del Diagnóstico -->
           <div class="sim-step" data-step="4">
-            <div class="bg-teal/10 border border-teal/20 rounded-xl p-6 mb-6">
-              <h4 class="text-xs font-bold text-teal tracking-widest uppercase mb-1">Estrategia Recomendada</h4>
+            <div class="sim-result-card p-6 mb-6">
+              <div class="sim-result-head">
+                <span class="sim-result-chip">Lectura inicial completada</span>
+                <h4 class="text-xs font-bold text-teal tracking-widest uppercase mb-1">Estrategia Recomendada</h4>
+              </div>
               <h5 class="text-xl font-bold text-white mb-4" id="sim-result-title">Analizando parámetros...</h5>
               <p class="text-sm text-slate-300 font-light leading-relaxed mb-4" id="sim-result-desc">
                 Cargando sugerencias de optimización fiscal para el mercado ecuatoriano...
@@ -501,13 +580,19 @@
   <!-- =========================================================================
        7. SECCIÓN MÉTRICAS Y VALORES (LA DIFERENCIA ALIANZA)
        ========================================================================= -->
-  <section id="nosotros" class="py-24 bg-gradient-to-b from-obsidian to-obsidian-deep relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="nosotros" class="section-shell section-shell-values py-24 relative z-10 overflow-hidden" data-spotlight>
+    <div class="hero-gradient-mesh section-gradient-mesh"></div>
+    <div class="hero-grid-overlay section-grid-overlay"></div>
+    <div class="hero-spotlight section-spotlight"></div>
+    <div class="section-bg-media section-bg-media-values">
+      <img src="images/service_corporate.png" alt="" aria-hidden="true">
+    </div>
+    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Columna de Texto -->
         <div class="lg:col-span-6 reveal-up">
-          <h2 class="text-xs font-bold tracking-widest text-gold uppercase mb-3">La diferencia Alianza</h2>
+          <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">La diferencia Alianza</h2>
           <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">No entregamos papeles. Entregamos criterio para decidir.</h3>
           <p class="text-base text-slate-300 font-light mb-6 leading-relaxed">
             Simplificamos el entorno normativo ecuatoriano con una mirada práctica: menos ruido, más precisión y una agenda de acciones que puede ejecutarse. Cada caso se cruza desde lo legal, tributario y contable para evitar soluciones incompletas.
@@ -530,7 +615,34 @@
         </div>
 
         <!-- Columna de Métricas (Contadores Animados con GSAP) -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="values-visual-grid reveal-up">
+            <figure class="gallery-panel gallery-panel-large image-slot values-visual-main">
+              <img src="images/service_legal.png" alt="Mesa de trabajo con revisión legal y tributaria">
+              <figcaption>
+                <span>Criterio aplicado</span>
+                <strong>La lectura correcta evita decisiones caras.</strong>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-panel image-slot values-visual-side">
+              <img src="images/service_tax.png" alt="Documentos y análisis tributario">
+              <figcaption>
+                <span>Precisión</span>
+                <strong>Diagnóstico con foco real.</strong>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-panel gallery-panel-logo values-visual-side">
+              <img src="Logo.jpeg" alt="Identidad de Alianza">
+              <figcaption>
+                <span>Presencia</span>
+                <strong>Firma estratégica.</strong>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
           
           <div class="glass-panel p-8 text-center border-white/5">
             <span class="metric-number text-4xl sm:text-5xl font-extrabold text-gold tracking-tight" data-target="12" data-suffix="+">12+</span>
@@ -552,6 +664,7 @@
             <p class="text-xs text-slate-400 uppercase tracking-wider mt-3 font-semibold">Impuestos Optimizados</p>
           </div>
 
+          </div>
         </div>
 
       </div>
@@ -580,13 +693,19 @@
   <!-- =========================================================================
        8. SECCIÓN CONTACTO / AGENDAMIENTO (FORMULARIO CON SELECCIONADOR)
        ========================================================================= -->
-  <section id="contacto" class="py-24 bg-gradient-to-b from-obsidian-deep to-obsidian relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="contacto" class="section-shell section-shell-contact py-24 relative z-10 overflow-hidden" data-spotlight>
+    <div class="hero-gradient-mesh section-gradient-mesh"></div>
+    <div class="hero-grid-overlay section-grid-overlay"></div>
+    <div class="hero-spotlight section-spotlight"></div>
+    <div class="section-bg-media section-bg-media-contact">
+      <img src="images/hero_bg.png" alt="" aria-hidden="true">
+    </div>
+    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         <!-- Información de contacto -->
         <div class="lg:col-span-5 reveal-up">
-          <h2 class="text-xs font-bold tracking-widest text-gold uppercase mb-3">Siguiente movimiento</h2>
+          <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Siguiente movimiento</h2>
           <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Cuéntenos qué está en juego. Nosotros trazamos la ruta.</h3>
           <p class="text-slate-300 font-light mb-8 leading-relaxed">
             Reserve una sesión inicial para revisar su situación y detectar las decisiones que conviene tomar primero. Llegue con preguntas; salga con un mapa de acción.
@@ -625,6 +744,24 @@
                 <p class="text-sm text-white font-medium">+593 (2) 345-6789 / +593 99 876 5432</p>
               </div>
             </div>
+          </div>
+
+          <div class="contact-visual-stack mt-10">
+            <figure class="gallery-panel gallery-panel-large image-slot">
+              <img src="images/hero_bg.png" alt="Reunión estratégica con documentos legales">
+              <figcaption>
+                <span>Sesión inicial</span>
+                <strong>Traiga el caso. Salga con prioridades claras.</strong>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-panel image-slot">
+              <img src="images/service_corporate.png" alt="Expansión corporativa y estructura empresarial">
+              <figcaption>
+                <span>Expansión</span>
+                <strong>Estructura lista para crecer.</strong>
+              </figcaption>
+            </figure>
           </div>
         </div>
 
