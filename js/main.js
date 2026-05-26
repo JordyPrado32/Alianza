@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let pageIsReady = false;
+  let windowLoaded = document.readyState === 'complete';
+
+  const markPageLoaded = () => {
+    if (pageIsReady) return;
+    pageIsReady = true;
+    document.documentElement.classList.remove('preload-pending');
+    document.body.classList.add('page-loaded');
+  };
+
+  const hidePreloader = () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+
+    markPageLoaded();
+  };
   // 1. PRELOADER Y ANIMACIÓN DE ENTRADA (GSAP)
   const runPreloader = () => {
     const preloader = document.getElementById('preloader');
@@ -11,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressUI = document.querySelectorAll('.preloader-progress-bar, .preloader-progress-meta');
     const orbits = document.querySelectorAll('.preloader-orbit');
     
-    if (!preloader) return;
+    if (!preloader || pageIsReady || !windowLoaded) return;
 
     gsap.set([title, tagline, ...progressUI], { opacity: 0, y: 16 });
     gsap.set(statusCards, { opacity: 0, y: 22 });
@@ -41,8 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 0.35,
             ease: 'power4.inOut',
             onComplete: () => {
-              preloader.style.display = 'none';
-              document.body.classList.add('page-loaded');
+              hidePreloader();
               // Activar animaciones del Hero una vez se retire el preloader
               runHeroAnimations();
             } 
@@ -92,14 +109,35 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach(target => observer.observe(target));
   };
 
-  // Ejecutar el preloader
-  if (typeof gsap !== 'undefined') {
-    runPreloader();
+  const startPreloaderSequence = () => {
+    if (typeof gsap !== 'undefined') {
+      window.requestAnimationFrame(runPreloader);
+      return;
+    }
+
+    const progressValue = document.querySelector('.preloader-progress-value');
+    const fill = document.querySelector('.preloader-progress-fill');
+
+    if (fill) {
+      fill.style.width = '100%';
+    }
+
+    if (progressValue) {
+      progressValue.textContent = '100%';
+    }
+
+    window.setTimeout(() => {
+      hidePreloader();
+    }, 1800);
+  };
+
+  if (windowLoaded) {
+    startPreloaderSequence();
   } else {
-    // Si GSAP no carga por alguna razón, ocultar preloader
-    const preloader = document.getElementById('preloader');
-    if (preloader) preloader.style.display = 'none';
-    document.body.classList.add('page-loaded');
+    window.addEventListener('load', () => {
+      windowLoaded = true;
+      startPreloaderSequence();
+    }, { once: true });
   }
 
   // 3. EFECTOS DE DESPLAZAMIENTO (GSAP ScrollTrigger)
@@ -447,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = originalText;
         
         // Mensaje de éxito detallado
-        showFormAlert(`¡Cita agendada con éxito! Nos comunicaremos con usted a la brevedad para confirmar la sesión ${type === 'presencial' ? 'presencial en nuestras oficinas de Quito' : 'virtual vía Teams/Zoom'} el día ${date}.`, 'success');
+        showFormAlert(`¡Cita agendada con éxito! Nos comunicaremos con usted a la brevedad para confirmar su sesión virtual vía Teams/Zoom el día ${date}.`, 'success');
         
         // Limpiar formulario
         contactForm.reset();
@@ -476,3 +514,4 @@ document.addEventListener('DOMContentLoaded', () => {
     alertContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   };
 });
+
