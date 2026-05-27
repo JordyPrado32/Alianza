@@ -272,7 +272,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid">
         
         <!-- Tarjeta 1: Asesoría Tributaria y Planificación Fiscal -->
-        <div class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full">
+        <article class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full is-active" data-service-card tabindex="0" aria-label="Servicio fiscal">
           <div class="h-48 overflow-hidden relative image-slot">
             <img src="images/service_tax.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Asesoría Tributaria y Planificación Fiscal" width="900" height="900" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
@@ -283,15 +283,15 @@
             <p class="text-sm text-slate-300 font-light flex-grow">
               Revisamos obligaciones, deducciones y riesgos antes de que se conviertan en multas. El objetivo: pagar lo justo, justificarlo bien y dormir tranquilo.
             </p>
-            <div class="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <div class="mt-6 pt-4 border-t border-white/5 flex flex-wrap justify-between items-center gap-3">
               <span class="text-xs text-slate-400 font-semibold uppercase">SRI, IVA, renta</span>
               <a href="#contacto" class="text-xs text-gold font-bold hover:text-gold-light no-underline">Consultar &rarr;</a>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- Tarjeta 2: Derecho Corporativo y Cumplimiento -->
-        <div class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full">
+        <article class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full" data-service-card tabindex="0" aria-label="Servicio legal">
           <div class="h-48 overflow-hidden relative image-slot">
             <img src="images/service_legal.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Derecho Corporativo y Cumplimiento Legal" width="900" height="900" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
@@ -302,15 +302,15 @@
             <p class="text-sm text-slate-300 font-light flex-grow">
               Redactamos, revisamos y blindamos acuerdos comerciales para que el crecimiento no dependa de promesas ambiguas ni cláusulas débiles.
             </p>
-            <div class="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <div class="mt-6 pt-4 border-t border-white/5 flex flex-wrap justify-between items-center gap-3">
               <span class="text-xs text-slate-400 font-semibold uppercase">Contratos, actas, due diligence</span>
               <a href="#contacto" class="text-xs text-gold font-bold hover:text-gold-light no-underline">Consultar &rarr;</a>
             </div>
           </div>
-        </div>
+        </article>
 
         <!-- Tarjeta 3: Establecimiento de Sociedades Extranjeras -->
-        <div class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full md:col-span-2 lg:col-span-1">
+        <article class="glass-card service-card overflow-hidden service-card-anim flex flex-col h-full md:col-span-2 lg:col-span-1" data-service-card tabindex="0" aria-label="Servicio de expansión">
           <div class="h-48 overflow-hidden relative image-slot">
             <img src="images/service_corporate.jpg" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Establecimiento de Sociedades Extranjeras en Ecuador" width="900" height="900" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
@@ -321,12 +321,12 @@
             <p class="text-sm text-slate-300 font-light flex-grow">
               Constituimos S.A.S., sucursales y estructuras corporativas con RUC, patentes, cuentas y obligaciones iniciales ordenadas desde el primer día.
             </p>
-            <div class="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <div class="mt-6 pt-4 border-t border-white/5 flex flex-wrap justify-between items-center gap-3">
               <span class="text-xs text-slate-400 font-semibold uppercase">S.A.S., sucursales, inversión</span>
               <a href="#contacto" class="text-xs text-gold font-bold hover:text-gold-light no-underline">Consultar &rarr;</a>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -335,73 +335,116 @@
   <!-- =========================================================================
        5. SECCIÓN EXPERIENCIA VISUAL (ESPACIOS PARA IMÁGENES)
        ========================================================================= -->
-  <section id="experiencia" class="section-shell section-shell-experience visual-lab-section py-24 relative z-10 overflow-hidden" data-spotlight>
+  <section id="experiencia" class="section-shell section-shell-experience py-24 relative z-10 overflow-hidden" data-spotlight>
     <div class="hero-gradient-mesh section-gradient-mesh"></div>
     <div class="hero-grid-overlay section-grid-overlay"></div>
     <div class="hero-spotlight section-spotlight"></div>
     <div class="section-bg-media section-bg-media-experience">
       <img src="images/service_legal.jpg" alt="" aria-hidden="true" width="900" height="900" loading="lazy" decoding="async">
     </div>
-    <div class="section-orbit section-orbit-left"></div>
     <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-5 reveal-up">
-          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3 block">Casos de intervención</span>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Mostramos cómo intervenimos cuando un negocio necesita orden y protección.</h3>
+      <div class="experience-shell reveal-up">
+        <div class="experience-copy">
+          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Casos de intervencion</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Asi intervenimos cuando un negocio necesita orden y proteccion.</h3>
           <p class="text-slate-300 font-light leading-relaxed mb-8">
-            Cada caso resume el tipo de problema que atendemos, la lógica de la intervención y el resultado esperado para una empresa que necesita operar con menos riesgo.
+            Seleccione un escenario y vea como convertimos un problema tributario, legal o societario en una ruta concreta de accion.
           </p>
 
-          <div class="visual-copy-list">
-            <div>
+          <div class="experience-nav" role="tablist" aria-label="Casos de intervencion">
+            <button type="button" class="experience-tab is-active" data-case-target="caso-importadora" role="tab" aria-selected="true">
               <span>Caso 1</span>
-              <p><strong class="text-white">Empresa importadora:</strong> riesgo tributario alto y duplicidad de obligaciones.</p>
-            </div>
-            <div>
-              <span>Resultado</span>
-              <p>Reducción del riesgo fiscal, reorganización societaria y estructura legal implementada.</p>
-            </div>
-            <div>
-              <span>Enfoque</span>
-              <p>Diagnóstico, priorización de obligaciones y ejecución documental con seguimiento.</p>
-            </div>
+              <strong>Empresa importadora</strong>
+              <p>Riesgo tributario alto, duplicidad de obligaciones y soporte documental inconsistente.</p>
+            </button>
+            <button type="button" class="experience-tab" data-case-target="caso-familiar" role="tab" aria-selected="false">
+              <span>Caso 2</span>
+              <strong>Empresa familiar</strong>
+              <p>Crecimiento rapido con decisiones operativas sin estructura societaria ni responsables claros.</p>
+            </button>
+            <button type="button" class="experience-tab" data-case-target="caso-extranjero" role="tab" aria-selected="false">
+              <span>Caso 3</span>
+              <strong>Inversionista extranjero</strong>
+              <p>Entrada a Ecuador con dudas sobre figura legal, RUC, permisos y obligaciones iniciales.</p>
+            </button>
           </div>
         </div>
 
-        <div class="lg:col-span-7 experience-visual-column">
-          <div class="editorial-gallery">
-            <figure class="gallery-panel gallery-panel-feature image-slot reveal-up">
-              <img src="images/service_legal.jpg" alt="Equipo legal revisando documentación corporativa" width="900" height="900" fetchpriority="high" decoding="async">
+        <div class="experience-stage reveal-up">
+          <article class="experience-panel is-active" id="caso-importadora" data-case-panel>
+            <figure class="experience-figure image-slot">
+              <img src="images/service_legal.jpg" alt="Mesa de trabajo para reorganizacion tributaria y legal" width="900" height="900" loading="lazy" decoding="async">
               <figcaption>
-                <span>Equipo consultor</span>
-                <strong>La estrategia se conversa antes de redactarse.</strong>
+                <span>Intervencion</span>
+                <strong>Primero bajamos exposicion. Luego ordenamos estructura y soporte.</strong>
               </figcaption>
             </figure>
+            <div class="experience-details">
+              <div class="experience-detail-card glass-panel">
+                <span>Resultado</span>
+                <strong>Reduccion del riesgo fiscal y reorganizacion societaria implementada.</strong>
+                <p>El negocio recupera trazabilidad, calendario real de obligaciones y criterios claros para responder ante revision o crecimiento.</p>
+              </div>
+              <div class="experience-detail-card glass-panel">
+                <span>Enfoque</span>
+                <ul class="experience-points">
+                  <li>Diagnostico tributario y cruce con documentacion critica.</li>
+                  <li>Priorizacion de contingencias con impacto real.</li>
+                  <li>Ejecucion documental y seguimiento hasta cierre.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-            <figure class="gallery-panel gallery-panel-portrait image-slot reveal-up">
-              <img src="images/service_corporate.jpg" alt="Estructuración societaria y expansión empresarial" width="900" height="900" fetchpriority="high" decoding="async">
+          <article class="experience-panel" id="caso-familiar" data-case-panel hidden>
+            <figure class="experience-figure image-slot">
+              <img src="images/service_tax.jpg" alt="Analisis contable y tributario para empresa familiar" width="900" height="900" loading="lazy" decoding="async">
               <figcaption>
-                <span>Expansión</span>
-                <strong>Sociedades listas para operar.</strong>
+                <span>Intervencion</span>
+                <strong>Ordenamos roles, obligaciones y decisiones para que el negocio deje de depender de improvisacion.</strong>
               </figcaption>
             </figure>
+            <div class="experience-details">
+              <div class="experience-detail-card glass-panel">
+                <span>Resultado</span>
+                <strong>Funcionamiento mas claro, menos friccion interna y control basico sobre riesgos societarios y fiscales.</strong>
+                <p>La empresa gana estructura minima para crecer con responsables definidos y con documentos que sostienen decisiones clave.</p>
+              </div>
+              <div class="experience-detail-card glass-panel">
+                <span>Enfoque</span>
+                <ul class="experience-points">
+                  <li>Lectura conjunta de operacion, familia y cumplimiento.</li>
+                  <li>Definicion de responsables, actas y prioridades.</li>
+                  <li>Seguimiento mensual para consolidar el orden.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-            <figure class="gallery-panel gallery-panel-logo gallery-panel-compact reveal-up">
-              <img src="Logo.jpeg" alt="Logo Alianza en tarjeta de identidad visual" width="640" height="647" fetchpriority="high" decoding="async">
+          <article class="experience-panel" id="caso-extranjero" data-case-panel hidden>
+            <figure class="experience-figure image-slot">
+              <img src="images/service_corporate.jpg" alt="Estructuracion societaria para expansion empresarial en Ecuador" width="900" height="900" loading="lazy" decoding="async">
               <figcaption>
-                <span>Identidad</span>
-                <strong>Marca con presencia propia.</strong>
+                <span>Intervencion</span>
+                <strong>Disenamos una entrada limpia para operar desde el primer dia con base legal y fiscal correcta.</strong>
               </figcaption>
             </figure>
-
-            <figure class="gallery-panel gallery-panel-wide image-slot reveal-up">
-              <img src="images/hero_bg.jpg" alt="Planificación estratégica tributaria" width="1024" height="1024" fetchpriority="high" decoding="async">
-              <figcaption>
-                <span>Diagnóstico</span>
-                <strong>Una hoja de ruta, no una opinión suelta.</strong>
-              </figcaption>
-            </figure>
-          </div>
+            <div class="experience-details">
+              <div class="experience-detail-card glass-panel">
+                <span>Resultado</span>
+                <strong>Figura juridica definida, RUC activo y obligaciones iniciales bajo control.</strong>
+                <p>La inversion entra con una ruta clara de constitucion, representacion y cumplimiento para evitar retrasos o estructuras mal elegidas.</p>
+              </div>
+              <div class="experience-detail-card glass-panel">
+                <span>Enfoque</span>
+                <ul class="experience-points">
+                  <li>Comparacion entre SAS, sucursal y otras alternativas.</li>
+                  <li>Hoja de ruta para constitucion, habilitacion y facturacion.</li>
+                  <li>Mapa inicial de impuestos, permisos y deberes societarios.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -620,107 +663,85 @@
       <img src="images/service_corporate.jpg" alt="" aria-hidden="true" width="900" height="900" loading="lazy" decoding="async">
     </div>
     <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Columna de Texto -->
-        <div class="lg:col-span-6 reveal-up">
+      <div class="alliance-shell reveal-up">
+        <div class="alliance-copy">
           <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">La diferencia Alianza</h2>
           <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">No entregamos papeles. Entregamos criterio para decidir.</h3>
-          <p class="text-base text-slate-300 font-light mb-6 leading-relaxed">
-            Simplificamos el entorno normativo ecuatoriano con una mirada práctica: menos ruido, más precisión y una agenda de acciones que puede ejecutarse. Cada caso se cruza desde lo legal, tributario y contable para evitar soluciones incompletas.
+          <p class="text-base text-slate-300 font-light mb-8 leading-relaxed">
+            Unimos lectura legal, tributaria y contable para que cada recomendacion sirva de verdad en la operacion. Menos ruido, mas claridad y una secuencia ejecutable.
           </p>
-          
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="text-gold text-lg mt-0.5">&bull;</span>
-              <p class="text-sm text-slate-300 font-light"><strong class="text-white">Claridad desde el inicio:</strong> Alcance, tiempos y prioridades definidos antes de empezar.</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-gold text-lg mt-0.5">&bull;</span>
-              <p class="text-sm text-slate-300 font-light"><strong class="text-white">Actualización constante:</strong> Revisión frente a reformas tributarias, directivas del SRI e instructivos societarios.</p>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="text-gold text-lg mt-0.5">&bull;</span>
-              <p class="text-sm text-slate-300 font-light"><strong class="text-white">Respuesta ágil:</strong> Atención 100% virtual con foco en resolver, no en alargar el trámite.</p>
-            </div>
+
+          <div class="alliance-pillars">
+            <article class="alliance-pillar glass-panel">
+              <span>Claridad</span>
+              <strong>Alcance, tiempos y prioridades definidos desde el inicio.</strong>
+              <p>El cliente sabe que se va a corregir, en que orden y que impacto espera de cada decision.</p>
+            </article>
+            <article class="alliance-pillar glass-panel">
+              <span>Actualizacion</span>
+              <strong>Lectura permanente frente a cambios del SRI y reglas societarias.</strong>
+              <p>No trabajamos con respuestas congeladas: ajustamos criterio y documentos a la norma vigente.</p>
+            </article>
+            <article class="alliance-pillar glass-panel">
+              <span>Respuesta</span>
+              <strong>Atencion agil con foco en resolver, no en alargar el tramite.</strong>
+              <p>La asesoria acompana la implementacion hasta que el negocio pueda operar con mas control.</p>
+            </article>
           </div>
         </div>
 
-        <!-- Columna de Métricas (Contadores Animados con GSAP) -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="values-visual-grid reveal-up">
-            <figure class="gallery-panel gallery-panel-feature image-slot values-visual-main">
-              <img src="images/service_legal.jpg" alt="Mesa de trabajo con revisión legal y tributaria" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Criterio aplicado</span>
-                <strong>La lectura correcta evita decisiones caras.</strong>
-              </figcaption>
-            </figure>
+        <div class="alliance-board">
+          <figure class="alliance-hero glass-panel image-slot">
+            <img src="images/service_legal.jpg" alt="Revision legal y tributaria con enfoque estrategico" width="900" height="900" loading="lazy" decoding="async">
+            <figcaption>
+              <span>Criterio aplicado</span>
+              <strong>La lectura correcta evita decisiones caras y soluciones a medias.</strong>
+            </figcaption>
+          </figure>
 
-            <figure class="gallery-panel gallery-panel-wide image-slot values-visual-side values-visual-top">
-              <img src="images/service_tax.jpg" alt="Documentos y análisis tributario" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Precisión</span>
-                <strong>Diagnóstico con foco real.</strong>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-panel gallery-panel-logo gallery-panel-compact values-visual-side values-visual-bottom">
+          <div class="alliance-cards">
+            <article class="glass-panel alliance-card">
+              <span>Especializacion</span>
+              <strong>Tributario y societario en un solo frente.</strong>
+              <p>La estructura legal, el cumplimiento fiscal y el soporte documental se leen como un mismo sistema.</p>
+            </article>
+            <article class="glass-panel alliance-card">
+              <span>Atencion</span>
+              <strong>Ruta de accion hecha para la operacion real.</strong>
+              <p>No usamos respuestas genericas ni paquetes cerrados. Ajustamos cada plan al punto de riesgo concreto.</p>
+            </article>
+            <article class="glass-panel alliance-card">
+              <span>Ejecucion</span>
+              <strong>Implementacion con prioridad y trazabilidad.</strong>
+              <p>Ordenamos documentos, responsables y siguientes pasos para que la decision no quede solo en una recomendacion.</p>
+            </article>
+            <article class="glass-panel alliance-card alliance-brand-card">
               <img src="Logo.jpeg" alt="Identidad de Alianza" width="640" height="647" loading="lazy" decoding="async">
-              <figcaption>
+              <div>
                 <span>Presencia</span>
-                <strong>Firma estratégica.</strong>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          
-          <div class="glass-panel p-8 border-white/5">
-            <p class="text-xs text-gold uppercase tracking-[0.18em] font-semibold mb-3">Especialización</p>
-            <h4 class="text-xl font-bold text-white mb-2">Especialistas tributarios y societarios</h4>
-            <p class="text-sm text-slate-300 font-light">Intervenimos estructura legal, obligaciones fiscales y soporte documental como un solo frente estratégico.</p>
-          </div>
-
-          <div class="glass-panel p-8 border-white/5">
-            <p class="text-xs text-teal uppercase tracking-[0.18em] font-semibold mb-3">Atención</p>
-            <h4 class="text-xl font-bold text-white mb-2">Atención estratégica personalizada</h4>
-            <p class="text-sm text-slate-300 font-light">Cada empresa recibe una ruta de acción ajustada a su operación, no respuestas genéricas ni paquetes cerrados.</p>
-          </div>
-
-          <div class="glass-panel p-8 border-white/5">
-            <p class="text-xs text-teal uppercase tracking-[0.18em] font-semibold mb-3">Ejecución</p>
-            <h4 class="text-xl font-bold text-white mb-2">Implementación con criterio</h4>
-            <p class="text-sm text-slate-300 font-light">Ordenamos prioridades, documentos y decisiones para que el negocio avance con respaldo y menor exposición.</p>
-          </div>
-
-          <div class="glass-panel p-8 border-white/5">
-            <p class="text-xs text-gold uppercase tracking-[0.18em] font-semibold mb-3">Relación</p>
-            <h4 class="text-xl font-bold text-white mb-2">Acompañamiento cercano</h4>
-            <p class="text-sm text-slate-300 font-light">La asesoría no termina en un informe: seguimos hasta que la estructura quede clara y operativa.</p>
-          </div>
-
+                <strong>Firma estrategica, cercana y operativa.</strong>
+              </div>
+            </article>
           </div>
         </div>
-
       </div>
 
-      <div class="process-lane mt-16 reveal-up">
+      <div class="alliance-process reveal-up">
         <div class="process-step">
           <span>Escuchar</span>
-          <p>Entendemos el negocio, las urgencias y las obligaciones pendientes.</p>
+          <p>Entendemos el negocio, la urgencia y el contexto regulatorio real.</p>
         </div>
         <div class="process-step">
           <span>Ordenar</span>
-          <p>Separamos riesgo real, oportunidad fiscal y trámites críticos.</p>
+          <p>Separamos contingencia, oportunidad y tramite critico para actuar con foco.</p>
         </div>
         <div class="process-step">
-          <span>Defender</span>
-          <p>Preparamos documentos, respuestas y argumentos con trazabilidad.</p>
+          <span>Ejecutar</span>
+          <p>Preparamos documentos, respuestas y decisiones con respaldo tecnico.</p>
         </div>
         <div class="process-step">
-          <span>Escalar</span>
-          <p>Dejamos una estructura que soporte crecimiento y fiscalización.</p>
+          <span>Sostener</span>
+          <p>Dejamos una estructura que soporte crecimiento, control y fiscalizacion.</p>
         </div>
       </div>
     </div>

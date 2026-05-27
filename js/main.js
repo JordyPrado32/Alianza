@@ -243,24 +243,75 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const tiltCards = document.querySelectorAll('.service-card');
+  const serviceCards = document.querySelectorAll('[data-service-card]');
+  const caseSelectorItems = document.querySelectorAll('[data-case-target]');
+  const casePanels = document.querySelectorAll('[data-case-panel]');
+  const canUseHoverTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  const setActiveServiceCard = (activeCard) => {
+    serviceCards.forEach((card) => {
+      card.classList.toggle('is-active', card === activeCard);
+      if (card !== activeCard) {
+        card.style.transform = '';
+      }
+    });
+  };
+
+  if (serviceCards.length) {
+    const defaultCard = serviceCards[0];
+    setActiveServiceCard(defaultCard);
+
+    serviceCards.forEach((card) => {
+      card.addEventListener('focus', () => setActiveServiceCard(card));
+      card.addEventListener('pointerenter', () => setActiveServiceCard(card));
+      card.addEventListener('click', () => setActiveServiceCard(card));
+    });
+  }
 
   tiltCards.forEach((card) => {
     card.addEventListener('pointermove', (event) => {
-      if (window.innerWidth < 900) return;
+      if (!canUseHoverTilt || window.innerWidth < 900) return;
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
       const rotateY = ((x / rect.width) - 0.5) * 7;
       const rotateX = ((y / rect.height) - 0.5) * -7;
-      card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
     card.addEventListener('pointerleave', () => {
-      card.style.transform = '';
+      if (!card.classList.contains('is-active')) {
+        card.style.transform = '';
+      } else if (canUseHoverTilt) {
+        card.style.transform = 'translateY(-8px)';
+      }
     });
   });
 
   // 5. LÓGICA DEL SIMULADOR TRIBUTARIO / DIAGNÓSTICO
+  if (caseSelectorItems.length && casePanels.length) {
+    const setActiveCase = (targetId) => {
+      caseSelectorItems.forEach((item) => {
+        const isActive = item.getAttribute('data-case-target') === targetId;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      casePanels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle('is-active', isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    setActiveCase(caseSelectorItems[0].getAttribute('data-case-target'));
+
+    caseSelectorItems.forEach((item) => {
+      item.addEventListener('click', () => setActiveCase(item.getAttribute('data-case-target')));
+      item.addEventListener('focus', () => setActiveCase(item.getAttribute('data-case-target')));
+    });
+  }
+
   const simulatorData = {
     perfil: '',
     ingresos: '',
