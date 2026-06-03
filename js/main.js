@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 0.35,
             ease: 'power4.inOut',
             onComplete: () => {
+              document.body.classList.add('hero-gsap-ready');
               hidePreloader();
               // Activar animaciones del Hero una vez se retire el preloader
               runHeroAnimations();
@@ -74,17 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const runHeroAnimations = () => {
     const tl = gsap.timeline();
     
-    tl.from('.glass-navbar', { opacity: 0, y: -18, duration: 0.55, ease: 'power2.out' })
-      .from('.hero-gradient-mesh, .hero-grid-overlay', { opacity: 0, scale: 1.04, duration: 1.1, ease: 'power2.out' }, '-=0.32')
-      .from('.hero-badge', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.5')
-      .from('.hero-title span', { opacity: 0, y: 30, stagger: 0.2, duration: 0.8, ease: 'power3.out' }, '-=0.3')
-      .from('.hero-desc', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-      .from('.hero-ctas', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-      .from('.hero-proof-row > div', { opacity: 0, y: 18, stagger: 0.08, duration: 0.5, ease: 'power2.out' }, '-=0.35')
-      .from('.hero-main-card', { opacity: 0, scale: 0.88, rotate: -2, duration: 0.9, ease: 'power3.out' }, '-=0.65')
-      .from('.floating-chip', { opacity: 0, y: 18, stagger: 0.1, duration: 0.5, ease: 'back.out(1.4)' }, '-=0.35')
-      .from('.dossier-card', { opacity: 0, x: 35, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-      .from('.hero-image-tile', { opacity: 0, x: -35, duration: 0.7, ease: 'power3.out' }, '-=0.5');
+    tl.from('.glass-navbar', { opacity: 0, y: -14, duration: 0.35, ease: 'power2.out' })
+      .from('.hero-gradient-mesh, .hero-grid-overlay', { opacity: 0, scale: 1.02, duration: 0.55, ease: 'power2.out' }, '-=0.28')
+      .from('.hero-badge', { opacity: 0, y: 14, duration: 0.32, ease: 'power3.out' }, '-=0.38')
+      .from('.hero-title span', { opacity: 0, y: 22, stagger: 0.08, duration: 0.45, ease: 'power3.out' }, '-=0.24')
+      .from('.hero-desc', { opacity: 0, y: 14, duration: 0.36, ease: 'power3.out' }, '-=0.28')
+      .from('.hero-ctas', { opacity: 0, y: 14, duration: 0.36, ease: 'power3.out' }, '-=0.25')
+      .from('.hero-proof-row > div', { opacity: 0, y: 12, stagger: 0.04, duration: 0.32, ease: 'power2.out' }, '-=0.22')
+      .from('.hero-main-card', { opacity: 0, scale: 0.94, rotate: -1, duration: 0.48, ease: 'power3.out' }, '-=0.5')
+      .from('.floating-chip', { opacity: 0, y: 12, stagger: 0.05, duration: 0.3, ease: 'back.out(1.25)' }, '-=0.22')
+      .from('.dossier-card', { opacity: 0, x: 22, duration: 0.38, ease: 'power3.out' }, '-=0.28')
+      .from('.hero-image-tile', { opacity: 0, x: -22, duration: 0.38, ease: 'power3.out' }, '-=0.3');
   };
 
   const setupRevealFallback = () => {

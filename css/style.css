@@ -39,6 +39,10 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 html.preload-pending,
 html.preload-pending body {
   overflow: hidden;
@@ -86,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
   background:
@@ -442,6 +446,55 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
   transform: translateY(-2px);
   color: var(--color-obsidian-deep);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.6rem);
+  bottom: clamp(1rem, 3vw, 1.6rem);
+  z-index: 1200;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1fa855, #0f7f42);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 45px rgba(0, 4, 17, 0.45), 0 0 24px rgba(31, 168, 85, 0.24);
+  font: 800 0.88rem/1 var(--font-title);
+  letter-spacing: 0.02em;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+}
+
+.whatsapp-float svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex: 0 0 auto;
+}
+
+.whatsapp-float span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  color: #ffffff;
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #24bd60, #108246);
+  box-shadow: 0 22px 55px rgba(0, 4, 17, 0.55), 0 0 30px rgba(31, 168, 85, 0.34);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 2px solid rgba(255, 247, 224, 0.72);
+  outline-offset: 4px;
 }
 
 /* SIMULADOR TRIBUTARIO / DIAGNÓSTICO */
@@ -1684,30 +1737,30 @@ h1, h2, h3, h4, h5, h6 {
   font: 800 1.1rem/1.1 var(--font-title);
 }
 
-.page-loaded .hero-badge,
-.page-loaded .hero-title span,
-.page-loaded .hero-desc,
-.page-loaded .hero-ctas,
-.page-loaded .hero-proof-row > div {
+body.page-loaded:not(.hero-gsap-ready) .hero-badge,
+body.page-loaded:not(.hero-gsap-ready) .hero-title span,
+body.page-loaded:not(.hero-gsap-ready) .hero-desc,
+body.page-loaded:not(.hero-gsap-ready) .hero-ctas,
+body.page-loaded:not(.hero-gsap-ready) .hero-proof-row > div {
   animation: riseIn 0.75s ease-out both;
 }
 
-.page-loaded .hero-title span:nth-child(1) { animation-delay: 0.08s; }
-.page-loaded .hero-title span:nth-child(2) { animation-delay: 0.18s; }
-.page-loaded .hero-desc { animation-delay: 0.28s; }
-.page-loaded .hero-ctas { animation-delay: 0.38s; }
-.page-loaded .hero-proof-row > div:nth-child(1) { animation-delay: 0.48s; }
-.page-loaded .hero-proof-row > div:nth-child(2) { animation-delay: 0.56s; }
-.page-loaded .hero-proof-row > div:nth-child(3) { animation-delay: 0.64s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-title span:nth-child(1) { animation-delay: 0.08s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-title span:nth-child(2) { animation-delay: 0.18s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-desc { animation-delay: 0.28s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-ctas { animation-delay: 0.38s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-proof-row > div:nth-child(1) { animation-delay: 0.48s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-proof-row > div:nth-child(2) { animation-delay: 0.56s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-proof-row > div:nth-child(3) { animation-delay: 0.64s; }
 
-.page-loaded .hero-main-card,
-.page-loaded .dossier-card,
-.page-loaded .hero-image-tile {
+body.page-loaded:not(.hero-gsap-ready) .hero-main-card,
+body.page-loaded:not(.hero-gsap-ready) .dossier-card,
+body.page-loaded:not(.hero-gsap-ready) .hero-image-tile {
   animation: scaleIn 0.8s ease-out both;
 }
 
-.page-loaded .dossier-card { animation-delay: 0.36s; }
-.page-loaded .hero-image-tile { animation-delay: 0.46s; }
+body.page-loaded:not(.hero-gsap-ready) .dossier-card { animation-delay: 0.36s; }
+body.page-loaded:not(.hero-gsap-ready) .hero-image-tile { animation-delay: 0.46s; }
 
 .fallback-reveal {
   opacity: 0;
@@ -1943,7 +1996,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-proof-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+  }
+
+  .hero-proof-row.grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-proof-row > div {
+    min-height: auto;
   }
 
   .hero-visual-stage {
@@ -2004,6 +2066,13 @@ h1, h2, h3, h4, h5, h6 {
   .gallery-panel-compact,
   .gallery-panel-wide {
     grid-row: span 1;
+  }
+
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+    width: 54px;
+    height: 54px;
   }
 }
 
