@@ -98,7 +98,7 @@
   </script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body class="bg-obsidian-deep text-slate-100 font-body">
 
@@ -672,18 +672,18 @@
       <img src="images/hero_bg.jpg" alt="" aria-hidden="true" width="1024" height="1024" loading="lazy" decoding="async">
     </div>
     <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="contact-layout-grid grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         <!-- Información de contacto -->
-        <div class="lg:col-span-5 reveal-up">
+        <div class="lg:col-span-5 reveal-up contact-copy-panel">
           <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Siguiente movimiento</h2>
           <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Cuéntenos qué está en juego. Nosotros trazamos la ruta.</h3>
           <p class="text-slate-300 font-light mb-8 leading-relaxed">
             Reserve una sesión inicial para revisar su situación y detectar las decisiones que conviene tomar primero. Llegue con preguntas; salga con un mapa de acción.
           </p>
 
-          <div class="space-y-6">
-            <div class="flex items-center gap-4">
+          <div class="contact-detail-list space-y-4">
+            <div class="contact-detail-item flex items-center gap-4">
               <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center border border-teal/20 flex-shrink-0">
                 <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14"/></svg>
               </div>
@@ -693,7 +693,7 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="contact-detail-item flex items-center gap-4">
               <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center border border-gold/20 flex-shrink-0">
                 <!-- Mail Icon -->
                 <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -704,7 +704,7 @@
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="contact-detail-item flex items-center gap-4">
               <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center border border-teal/20 flex-shrink-0">
                 <!-- Phone Icon -->
                 <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
@@ -716,41 +716,37 @@
             </div>
           </div>
 
-          <div class="contact-visual-stack mt-10">
-            <figure class="gallery-panel gallery-panel-feature image-slot contact-visual-primary">
-              <img src="images/hero_bg.jpg" alt="Reunión estratégica con documentos legales" width="1024" height="1024" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Sesión inicial</span>
-                <strong>Traiga el caso. Salga con prioridades claras.</strong>
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-panel gallery-panel-wide image-slot contact-visual-secondary">
-              <img src="images/service_corporate.jpg" alt="Expansión corporativa y estructura empresarial" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Expansión</span>
-                <strong>Estructura lista para crecer.</strong>
-              </figcaption>
-            </figure>
-          </div>
+          <figure class="contact-image-panel gallery-panel image-slot mt-8">
+            <img src="images/service_corporate.jpg" alt="Expansión corporativa y estructura empresarial" width="900" height="900" loading="lazy" decoding="async">
+            <figcaption>
+              <span>Expansión</span>
+              <strong>Estructura lista para crecer.</strong>
+            </figcaption>
+          </figure>
         </div>
 
         <!-- Formulario de Agendamiento en Caja Premium -->
-        <div class="lg:col-span-7">
-          <div class="glass-panel p-8 sm:p-10 border-white/5 shadow-2xl relative">
+        <div class="lg:col-span-7 reveal-up contact-form-column">
+          <div class="glass-panel contact-form-panel p-8 sm:p-10 border-white/5 shadow-2xl relative">
             <h4 class="text-xl font-bold text-white mb-6 border-b border-white/5 pb-4">Abrir conversación estratégica</h4>
             
-            <form id="alianza-contact-form" class="space-y-6">
+            <div class="contact-step-rail" aria-label="Etapas de la solicitud">
+              <span>Datos</span>
+              <span>Diagnóstico</span>
+              <span>Agenda</span>
+            </div>
+            
+            <form id="alianza-contact-form" class="contact-form-body space-y-6">
               <input type="hidden" id="contact-interest" name="interest" value="Formulario General">
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <!-- Nombre Completo -->
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label for="contact-name" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Nombre Completo *</label>
                   <input type="text" id="contact-name" name="name" required class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors" placeholder="Ej. Carlos Mendoza">
                 </div>
                 <!-- Correo Electrónico -->
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label for="contact-email" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Correo Electrónico *</label>
                   <input type="email" id="contact-email" name="email" required class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors" placeholder="carlos@empresa.com">
                 </div>
@@ -758,12 +754,12 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <!-- Teléfono Celular -->
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label for="contact-phone" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Número Celular *</label>
                   <input type="tel" id="contact-phone" name="phone" required class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors" placeholder="Ej. 0998765432">
                 </div>
                 <!-- Empresa / Negocio -->
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label for="contact-company" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Empresa / Organización</label>
                   <input type="text" id="contact-company" name="company" class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors" placeholder="Nombre de su negocio">
                 </div>
@@ -773,25 +769,25 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <!-- Fecha Preferida de Reunión -->
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label for="contact-date" class="text-xs font-bold text-slate-300 uppercase tracking-wider">Fecha de Preferencia *</label>
                   <input type="date" id="contact-date" name="date" required class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
                 </div>
-                <div class="flex flex-col gap-2">
+                <div class="contact-field flex flex-col gap-2">
                   <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Canal de atención</label>
-                  <div class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white">
+                  <div class="contact-channel-card bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white">
                     Videollamada virtual (Teams/Zoom)
                   </div>
                 </div>
               </div>
 
               <!-- Mensaje / Notas adicionales -->
-              <div class="flex flex-col gap-2">
+              <div class="contact-field flex flex-col gap-2">
                 <label for="contact-message" class="text-xs font-bold text-slate-300 uppercase tracking-wider">¿Qué necesita resolver?</label>
                 <textarea id="contact-message" name="message" rows="4" class="bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors" placeholder="Ej. revisión de declaraciones, constitución de S.A.S., respuesta al SRI, contrato comercial..."></textarea>
               </div>
 
-              <button type="submit" class="btn-gold-fill w-full text-center" id="contact-submit-btn">Solicitar diagnóstico inicial</button>
+              <button type="submit" class="btn-gold-fill contact-submit-glow w-full text-center" id="contact-submit-btn">Solicitar diagnóstico inicial</button>
             </form>
 
             <div id="form-alert-container" class="hidden"></div>
