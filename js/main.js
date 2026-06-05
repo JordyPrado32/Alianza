@@ -41,18 +41,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressValue = document.querySelector('.preloader-progress-value');
     const title = document.querySelector('.preloader-text');
     const tagline = document.querySelector('.preloader-tagline');
-    const logo = document.querySelector('.preloader-logo-shell');
-    const statusCards = document.querySelectorAll('.preloader-status-card');
+    const logo = document.querySelector('.preloader-climb-logo');
+    const steps = document.querySelectorAll('.preloader-step');
     const progressUI = document.querySelectorAll('.preloader-progress-bar, .preloader-progress-meta');
-    const orbits = document.querySelectorAll('.preloader-orbit');
     
     if (!preloader || pageIsReady || !windowLoaded || preloaderStarted) return;
     preloaderStarted = true;
 
-    gsap.set([title, tagline, ...progressUI], { opacity: 0, y: 16 });
-    gsap.set(statusCards, { opacity: 0, y: 22 });
-    gsap.set(orbits, { opacity: 0, scale: 0.96 });
+    gsap.set([title, tagline, ...progressUI], { opacity: 0, y: 14 });
+    gsap.set(steps, { opacity: 0, y: 10 });
+    if (logo) gsap.set(logo, { animation: 'none', opacity: 1, x: 0, y: 0, scale: 0.94, rotate: -4 });
     setHeroInitialState();
+
+    gsap.timeline()
+      .to(steps, { opacity: 1, y: 0, stagger: 0.06, duration: 0.32, ease: 'power2.out' })
+      .to(title, { opacity: 1, y: 0, duration: 0.36, ease: 'power2.out' }, '-=0.2')
+      .to(tagline, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.2')
+      .to(progressUI, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.16');
+
+    const climbTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.1, delay: 0.15 });
+    if (logo) {
+      climbTimeline
+        .to(logo, { x: 74, y: -32, rotate: 4, scale: 1, duration: 0.28, ease: 'power2.inOut' })
+        .to(logo, { x: 148, y: -64, rotate: -3, duration: 0.28, ease: 'power2.inOut' })
+        .to(logo, { x: 222, y: -96, rotate: 3, duration: 0.28, ease: 'power2.inOut' })
+        .to(logo, { x: 296, y: -128, rotate: 0, scale: 1.04, duration: 0.32, ease: 'power2.inOut' })
+        .to(logo, { opacity: 0.5, scale: 0.92, duration: 0.24, ease: 'power2.in' })
+        .set(logo, { x: 0, y: 0, opacity: 1, scale: 0.94, rotate: -4 });
+    }
 
     // Animación de barra de progreso ficticia
     let progress = 0;
@@ -62,15 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = 100;
         clearInterval(interval);
         
-        // Iniciar transiciones de textos del logo con GSAP
+        climbTimeline.pause();
+
         const tl = gsap.timeline();
         
-        tl.fromTo(logo, { opacity: 0.18, scale: 0.82, rotate: -10 }, { opacity: 1, scale: 1, rotate: 0, duration: 0.8, ease: 'power3.out' })
-          .to(orbits, { opacity: 1, scale: 1, duration: 0.65, stagger: 0.08, ease: 'power2.out' }, '-=0.45')
-          .to(title, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.25')
-          .to(tagline, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.18')
-          .to(statusCards, { opacity: 1, y: 0, stagger: 0.08, duration: 0.45, ease: 'power2.out' }, '-=0.05')
-          .to(progressUI, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.15')
+        tl.to(logo, { opacity: 1, x: 296, y: -128, scale: 1.05, rotate: 0, duration: 0.42, ease: 'power3.out' })
+          .to('.preloader-step-5', { borderColor: 'rgba(212, 175, 55, 0.58)', boxShadow: '0 18px 42px rgba(212, 175, 55, 0.16)' }, '-=0.28')
           .to(preloader, { 
             opacity: 0,
             scale: 1.04,
