@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   let pageIsReady = false;
   let windowLoaded = document.readyState === 'complete';
+  let preloaderStarted = false;
+  let heroAnimationStarted = false;
 
   const markPageLoaded = () => {
     if (pageIsReady) return;
@@ -17,6 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     markPageLoaded();
   };
+
+  const setHeroInitialState = () => {
+    if (typeof gsap === 'undefined') return;
+
+    gsap.set('.glass-navbar', { opacity: 0, y: -14 });
+    gsap.set('.hero-gradient-mesh, .hero-grid-overlay', { opacity: 0, scale: 1.02 });
+    gsap.set('.hero-badge', { opacity: 0, y: 14 });
+    gsap.set('.hero-title span', { opacity: 0, y: 22 });
+    gsap.set('.hero-desc, .hero-ctas', { opacity: 0, y: 14 });
+    gsap.set('.hero-proof-row > div', { opacity: 0, y: 12 });
+    gsap.set('.hero-main-card', { opacity: 0, scale: 0.94, rotate: -1 });
+    gsap.set('.floating-chip', { opacity: 0, y: 12 });
+    gsap.set('.dossier-card', { opacity: 0, x: 22 });
+    gsap.set('.hero-image-tile', { opacity: 0, x: -22 });
+  };
   // 1. PRELOADER Y ANIMACIÓN DE ENTRADA (GSAP)
   const runPreloader = () => {
     const preloader = document.getElementById('preloader');
@@ -29,11 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressUI = document.querySelectorAll('.preloader-progress-bar, .preloader-progress-meta');
     const orbits = document.querySelectorAll('.preloader-orbit');
     
-    if (!preloader || pageIsReady || !windowLoaded) return;
+    if (!preloader || pageIsReady || !windowLoaded || preloaderStarted) return;
+    preloaderStarted = true;
 
     gsap.set([title, tagline, ...progressUI], { opacity: 0, y: 16 });
     gsap.set(statusCards, { opacity: 0, y: 22 });
     gsap.set(orbits, { opacity: 0, scale: 0.96 });
+    setHeroInitialState();
 
     // Animación de barra de progreso ficticia
     let progress = 0;
@@ -73,19 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. ANIMACIONES DEL HERO (Una vez se quita el preloader)
   const runHeroAnimations = () => {
+    if (heroAnimationStarted || typeof gsap === 'undefined') return;
+    heroAnimationStarted = true;
+
     const tl = gsap.timeline();
     
-    tl.from('.glass-navbar', { opacity: 0, y: -14, duration: 0.35, ease: 'power2.out' })
-      .from('.hero-gradient-mesh, .hero-grid-overlay', { opacity: 0, scale: 1.02, duration: 0.55, ease: 'power2.out' }, '-=0.28')
-      .from('.hero-badge', { opacity: 0, y: 14, duration: 0.32, ease: 'power3.out' }, '-=0.38')
-      .from('.hero-title span', { opacity: 0, y: 22, stagger: 0.08, duration: 0.45, ease: 'power3.out' }, '-=0.24')
-      .from('.hero-desc', { opacity: 0, y: 14, duration: 0.36, ease: 'power3.out' }, '-=0.28')
-      .from('.hero-ctas', { opacity: 0, y: 14, duration: 0.36, ease: 'power3.out' }, '-=0.25')
-      .from('.hero-proof-row > div', { opacity: 0, y: 12, stagger: 0.04, duration: 0.32, ease: 'power2.out' }, '-=0.22')
-      .from('.hero-main-card', { opacity: 0, scale: 0.94, rotate: -1, duration: 0.48, ease: 'power3.out' }, '-=0.5')
-      .from('.floating-chip', { opacity: 0, y: 12, stagger: 0.05, duration: 0.3, ease: 'back.out(1.25)' }, '-=0.22')
-      .from('.dossier-card', { opacity: 0, x: 22, duration: 0.38, ease: 'power3.out' }, '-=0.28')
-      .from('.hero-image-tile', { opacity: 0, x: -22, duration: 0.38, ease: 'power3.out' }, '-=0.3');
+    tl.to('.glass-navbar', { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out', clearProps: 'opacity,transform' })
+      .to('.hero-gradient-mesh, .hero-grid-overlay', { opacity: 1, scale: 1, duration: 0.55, ease: 'power2.out', clearProps: 'opacity,transform' }, '-=0.28')
+      .to('.hero-badge', { opacity: 1, y: 0, duration: 0.32, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.38')
+      .to('.hero-title span', { opacity: 1, y: 0, stagger: 0.08, duration: 0.45, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.24')
+      .to('.hero-desc', { opacity: 1, y: 0, duration: 0.36, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.28')
+      .to('.hero-ctas', { opacity: 1, y: 0, duration: 0.36, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.25')
+      .to('.hero-proof-row > div', { opacity: 1, y: 0, stagger: 0.04, duration: 0.32, ease: 'power2.out', clearProps: 'opacity,transform' }, '-=0.22')
+      .to('.hero-main-card', { opacity: 1, scale: 1, rotate: 0, duration: 0.48, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.5')
+      .to('.floating-chip', { opacity: 1, y: 0, stagger: 0.05, duration: 0.3, ease: 'back.out(1.25)', clearProps: 'opacity,transform' }, '-=0.22')
+      .to('.dossier-card', { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.28')
+      .to('.hero-image-tile', { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.3');
   };
 
   const setupRevealFallback = () => {
@@ -245,8 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tiltCards = document.querySelectorAll('.service-card');
   const serviceCards = document.querySelectorAll('[data-service-card]');
-  const caseSelectorItems = document.querySelectorAll('[data-case-target]');
-  const casePanels = document.querySelectorAll('[data-case-panel]');
   const canUseHoverTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   const setActiveServiceCard = (activeCard) => {
@@ -290,29 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 5. LÓGICA DEL SIMULADOR TRIBUTARIO / DIAGNÓSTICO
-  if (caseSelectorItems.length && casePanels.length) {
-    const setActiveCase = (targetId) => {
-      caseSelectorItems.forEach((item) => {
-        const isActive = item.getAttribute('data-case-target') === targetId;
-        item.classList.toggle('is-active', isActive);
-        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      });
-
-      casePanels.forEach((panel) => {
-        const isActive = panel.id === targetId;
-        panel.classList.toggle('is-active', isActive);
-        panel.hidden = !isActive;
-      });
-    };
-
-    setActiveCase(caseSelectorItems[0].getAttribute('data-case-target'));
-
-    caseSelectorItems.forEach((item) => {
-      item.addEventListener('click', () => setActiveCase(item.getAttribute('data-case-target')));
-      item.addEventListener('focus', () => setActiveCase(item.getAttribute('data-case-target')));
-    });
-  }
-
   const simulatorData = {
     perfil: '',
     ingresos: '',
@@ -504,6 +501,71 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. VALIDACIÓN DEL FORMULARIO DE CONTACTO / AGENDAMIENTO
   const contactForm = document.getElementById('alianza-contact-form');
   const alertContainer = document.getElementById('form-alert-container');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const company = document.getElementById('contact-company').value.trim();
+      const date = document.getElementById('contact-date').value;
+      const type = document.getElementById('contact-type').value;
+      const interest = document.getElementById('contact-interest').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !phone || !date || !type) {
+        showFormAlert('Por favor, complete todos los campos requeridos para agendar su cita.', 'error');
+        return;
+      }
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg> Abriendo correo...
+      `;
+
+      const formattedDate = new Date(`${date}T00:00:00`).toLocaleDateString('es-EC', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      const subject = `Nueva solicitud web - ${interest || 'Formulario General'}`;
+      const bodyLines = [
+        'Hola equipo de Alianza,',
+        '',
+        'Les comparto una nueva solicitud desde la pagina web:',
+        '',
+        `Nombre: ${name}`,
+        `Correo: ${email}`,
+        `Telefono: ${phone}`,
+        `Empresa: ${company || 'No especificada'}`,
+        `Fecha preferida: ${formattedDate}`,
+        `Canal: ${type}`,
+        `Interes: ${interest || 'Formulario General'}`,
+        '',
+        'Detalle del caso:',
+        message || 'No se agregaron detalles adicionales.'
+      ];
+
+      const mailtoUrl = `mailto:alianzatributaria9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+      window.location.href = mailtoUrl;
+
+      window.setTimeout(() => {
+        submitBtn.removeAttribute('disabled');
+        submitBtn.innerHTML = originalText;
+        showFormAlert('Se abrio su cliente de correo con la informacion del formulario. Revise el borrador y envielo a Alianza para completar la solicitud.', 'success');
+      }, 600);
+    }, true);
+  }
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {

@@ -165,9 +165,8 @@
         <nav class="hidden md:flex items-center gap-8">
           <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Inicio</a>
           <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Especialidades</a>
-          <a href="#experiencia" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Experiencia</a>
+          <a href="#servicios-detalle" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Servicios</a>
           <a href="#diagnostico" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Diagnóstico Fiscal</a>
-          <a href="#nosotros" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Diferencial</a>
           <a href="#contacto" class="text-sm font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200">Contacto</a>
         </nav>
 
@@ -190,9 +189,8 @@
       <div class="flex flex-col gap-4">
         <a href="#inicio" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Inicio</a>
         <a href="#servicios" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Especialidades</a>
-        <a href="#experiencia" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Experiencia</a>
+        <a href="#servicios-detalle" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Servicios</a>
         <a href="#diagnostico" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Diagnóstico Fiscal</a>
-        <a href="#nosotros" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Diferencial</a>
         <a href="#contacto" class="text-base font-medium text-slate-300 hover:text-gold no-underline transition-colors duration-200 mobile-nav-link">Contacto</a>
         <a href="#contacto" class="btn-gold-outline text-center text-sm w-full no-underline mt-2 mobile-nav-link">Abrir caso</a>
       </div>
@@ -230,8 +228,8 @@
 
           <div class="hero-ctas flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <a href="#diagnostico" class="btn-gold-fill no-underline w-full sm:w-auto text-center" id="hero-primary-cta">Solicitar diagnóstico</a>
-            <a href="#experiencia" class="btn-gold-outline no-underline w-full sm:w-auto text-center flex items-center justify-center gap-2" id="hero-secondary-cta">
-              Ver experiencia
+            <a href="#servicios-detalle" class="btn-gold-outline no-underline w-full sm:w-auto text-center flex items-center justify-center gap-2" id="hero-secondary-cta">
+              Ver servicios
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
@@ -371,118 +369,91 @@
   </section>
 
   <!-- =========================================================================
-       5. SECCIÓN EXPERIENCIA VISUAL (ESPACIOS PARA IMÁGENES)
+       5. SECCIÓN SERVICIOS DETALLADOS
        ========================================================================= -->
-  <section id="experiencia" class="section-shell section-shell-experience py-24 relative z-10 overflow-hidden" data-spotlight>
+  <section id="servicios-detalle" class="section-shell section-shell-experience pt-14 sm:pt-16 lg:pt-20 pb-24 relative z-10 overflow-hidden" data-spotlight>
     <div class="hero-gradient-mesh section-gradient-mesh"></div>
     <div class="hero-grid-overlay section-grid-overlay"></div>
     <div class="hero-spotlight section-spotlight"></div>
     <div class="section-bg-media section-bg-media-experience">
-      <img src="images/service_legal.jpg" alt="" aria-hidden="true" width="900" height="900" loading="lazy" decoding="async">
+      <img src="images/services_generated.png" alt="" aria-hidden="true" width="900" height="900" loading="lazy" decoding="async">
     </div>
     <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="experience-shell reveal-up">
-        <div class="experience-copy">
-          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Casos de intervención</span>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Así intervenimos cuando un negocio necesita orden y protección.</h3>
-          <p class="text-slate-300 font-light leading-relaxed mb-8">
-            Seleccione un escenario y vea cómo convertimos un problema tributario, legal o societario en una ruta concreta de acción.
+      <div class="services-catalog-shell reveal-up">
+        <div class="services-catalog-copy">
+          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Servicios</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-5">Arquitectura tributaria y contable para decisiones serias, respaldo real y ejecución impecable.</h3>
+          <p class="text-slate-300 font-light leading-relaxed mb-8 max-w-2xl">
+            Un portafolio preciso para cubrir cumplimiento, defensa y control con criterio técnico y presentación de alto nivel.
           </p>
+        </div>
 
-          <div class="experience-nav" role="tablist" aria-label="Casos de intervención">
-            <button type="button" class="experience-tab is-active" data-case-target="caso-importadora" role="tab" aria-selected="true">
-              <span>Caso 1</span>
-              <strong>Empresa importadora</strong>
-              <p>Riesgo tributario alto, duplicidad de obligaciones y soporte documental inconsistente.</p>
-            </button>
-            <button type="button" class="experience-tab" data-case-target="caso-familiar" role="tab" aria-selected="false">
-              <span>Caso 2</span>
-              <strong>Empresa familiar</strong>
-              <p>Crecimiento rápido con decisiones operativas sin estructura societaria ni responsables claros.</p>
-            </button>
-            <button type="button" class="experience-tab" data-case-target="caso-extranjero" role="tab" aria-selected="false">
-              <span>Caso 3</span>
-              <strong>Inversionista extranjero</strong>
-              <p>Entrada a Ecuador con dudas sobre figura legal, RUC, permisos y obligaciones iniciales.</p>
-            </button>
+        <figure class="services-catalog-hero glass-panel image-slot services-catalog-hero-simple">
+          <img src="images/services_generated.png" alt="Documentación tributaria, análisis financiero y soporte contable" width="900" height="900" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+      <div class="services-carousel reveal-up" data-services-carousel>
+        <div class="services-carousel-head">
+          <div>
+            <span class="services-carousel-kicker">Portafolio</span>
+            <p class="services-carousel-note">Deslice o avance entre servicios.</p>
           </div>
         </div>
 
-        <div class="experience-stage reveal-up">
-          <article class="experience-panel is-active" id="caso-importadora" data-case-panel>
-            <figure class="experience-figure image-slot">
-              <img src="images/service_legal.jpg" alt="Mesa de trabajo para reorganización tributaria y legal" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Intervención</span>
-                <strong>Primero bajamos exposición. Luego ordenamos estructura y soporte.</strong>
-              </figcaption>
-            </figure>
-            <div class="experience-details">
-              <div class="experience-detail-card glass-panel">
-                <span>Resultado</span>
-                <strong>Reducción del riesgo fiscal y reorganización societaria implementada.</strong>
-                <p>El negocio recupera trazabilidad, calendario real de obligaciones y criterios claros para responder ante revisión o crecimiento.</p>
-              </div>
-              <div class="experience-detail-card glass-panel">
-                <span>Enfoque</span>
-                <ul class="experience-points">
-                  <li>Diagnóstico tributario y cruce con documentación crítica.</li>
-                  <li>Priorización de contingencias con impacto real.</li>
-                  <li>Ejecución documental y seguimiento hasta cierre.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
+        <div class="services-carousel-stage">
+          <button type="button" class="services-carousel-btn services-carousel-btn-side services-carousel-btn-prev" data-services-prev aria-label="Servicio anterior">
+            <span>&larr;</span>
+          </button>
 
-          <article class="experience-panel" id="caso-familiar" data-case-panel hidden>
-            <figure class="experience-figure image-slot">
-              <img src="images/service_tax.jpg" alt="Análisis contable y tributario para empresa familiar" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Intervención</span>
-                <strong>Ordenamos roles, obligaciones y decisiones para que el negocio deje de depender de improvisación.</strong>
-              </figcaption>
-            </figure>
-            <div class="experience-details">
-              <div class="experience-detail-card glass-panel">
-                <span>Resultado</span>
-                <strong>Funcionamiento más claro, menos fricción interna y control básico sobre riesgos societarios y fiscales.</strong>
-                <p>La empresa gana estructura mínima para crecer con responsables definidos y con documentos que sostienen decisiones clave.</p>
-              </div>
-              <div class="experience-detail-card glass-panel">
-                <span>Enfoque</span>
-                <ul class="experience-points">
-                  <li>Lectura conjunta de operación, familia y cumplimiento.</li>
-                  <li>Definición de responsables, actas y prioridades.</li>
-                  <li>Seguimiento mensual para consolidar el orden.</li>
-                </ul>
-              </div>
+          <div class="services-carousel-viewport" data-services-viewport tabindex="0" aria-label="Carrusel de servicios">
+            <div class="services-catalog-grid">
+        <article class="services-catalog-card glass-panel">
+          <span>01</span>
+          <strong>Declaración de IVA y Renta</strong>
+          <p>Revisión y presentación correcta de obligaciones periódicas.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>02</span>
+          <strong>Recuperación de crédito tributario de IVA y Renta</strong>
+          <p>Gestión de soporte y trámite para recuperar valores.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>03</span>
+          <strong>Declaraciones patrimoniales</strong>
+          <p>Reporte patrimonial con orden y coherencia documental.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>04</span>
+          <strong>Devolución de IVA para tercera edad y discapacidad</strong>
+          <p>Preparación del expediente y acompañamiento en la solicitud.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>05</span>
+          <strong>Impugnaciones ante el SRI</strong>
+          <p>Respuesta técnica frente a requerimientos, glosas o observaciones.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>06</span>
+          <strong>Asesoría tributaria</strong>
+          <p>Criterio técnico para decidir con menos riesgo fiscal.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>07</span>
+          <strong>Manejo contable integral</strong>
+          <p>Orden contable y soporte continuo para la operación.</p>
+        </article>
+        <article class="services-catalog-card glass-panel">
+          <span>08</span>
+          <strong>Facturación</strong>
+          <p>Control y soporte para emitir correctamente.</p>
+        </article>
             </div>
-          </article>
+          </div>
 
-          <article class="experience-panel" id="caso-extranjero" data-case-panel hidden>
-            <figure class="experience-figure image-slot">
-              <img src="images/service_corporate.jpg" alt="Estructuración societaria para expansión empresarial en Ecuador" width="900" height="900" loading="lazy" decoding="async">
-              <figcaption>
-                <span>Intervención</span>
-                <strong>Diseñamos una entrada limpia para operar desde el primer día con base legal y fiscal correcta.</strong>
-              </figcaption>
-            </figure>
-            <div class="experience-details">
-              <div class="experience-detail-card glass-panel">
-                <span>Resultado</span>
-                <strong>Figura jurídica definida, RUC activo y obligaciones iniciales bajo control.</strong>
-                <p>La inversión entra con una ruta clara de constitución, representación y cumplimiento para evitar retrasos o estructuras mal elegidas.</p>
-              </div>
-              <div class="experience-detail-card glass-panel">
-                <span>Enfoque</span>
-                <ul class="experience-points">
-                  <li>Comparación entre SAS, sucursal y otras alternativas.</li>
-                  <li>Hoja de ruta para constitución, habilitación y facturación.</li>
-                  <li>Mapa inicial de impuestos, permisos y deberes societarios.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
+          <button type="button" class="services-carousel-btn services-carousel-btn-side services-carousel-btn-next" data-services-next aria-label="Servicio siguiente">
+            <span>&rarr;</span>
+          </button>
         </div>
       </div>
     </div>
@@ -691,101 +662,6 @@
   </section>
 
   <!-- =========================================================================
-       7. SECCIÓN MÉTRICAS Y VALORES (LA DIFERENCIA ALIANZA)
-       ========================================================================= -->
-  <section id="nosotros" class="section-shell section-shell-values py-24 relative z-10 overflow-hidden" data-spotlight>
-    <div class="hero-gradient-mesh section-gradient-mesh"></div>
-    <div class="hero-grid-overlay section-grid-overlay"></div>
-    <div class="hero-spotlight section-spotlight"></div>
-    <div class="section-bg-media section-bg-media-values">
-      <img src="images/service_corporate.jpg" alt="" aria-hidden="true" width="900" height="900" loading="lazy" decoding="async">
-    </div>
-    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="alliance-shell reveal-up">
-        <div class="alliance-copy">
-          <h2 class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">La diferencia Alianza</h2>
-          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">No entregamos papeles. Entregamos criterio para decidir.</h3>
-          <p class="text-base text-slate-300 font-light mb-8 leading-relaxed">
-            Unimos lectura legal, tributaria y contable para que cada recomendación sirva de verdad en la operación. Menos ruido, más claridad y una secuencia ejecutable.
-          </p>
-
-          <div class="alliance-pillars">
-            <article class="alliance-pillar glass-panel">
-              <span>Claridad</span>
-              <strong>Alcance, tiempos y prioridades definidos desde el inicio.</strong>
-              <p>El cliente sabe qué se va a corregir, en qué orden y qué impacto espera de cada decisión.</p>
-            </article>
-            <article class="alliance-pillar glass-panel">
-              <span>Actualización</span>
-              <strong>Lectura permanente frente a cambios del SRI y reglas societarias.</strong>
-              <p>No trabajamos con respuestas congeladas: ajustamos criterio y documentos a la norma vigente.</p>
-            </article>
-            <article class="alliance-pillar glass-panel">
-              <span>Respuesta</span>
-              <strong>Atención ágil con foco en resolver, no en alargar el trámite.</strong>
-              <p>La asesoría acompaña la implementación hasta que el negocio pueda operar con más control.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="alliance-board">
-          <figure class="alliance-hero glass-panel image-slot">
-            <img src="images/service_legal.jpg" alt="Revisión legal y tributaria con enfoque estratégico" width="900" height="900" loading="lazy" decoding="async">
-            <figcaption>
-              <span>Criterio aplicado</span>
-              <strong>La lectura correcta evita decisiones caras y soluciones a medias.</strong>
-            </figcaption>
-          </figure>
-
-          <div class="alliance-cards">
-            <article class="glass-panel alliance-card">
-              <span>Especialización</span>
-              <strong>Tributario y societario en un solo frente.</strong>
-              <p>La estructura legal, el cumplimiento fiscal y el soporte documental se leen como un mismo sistema.</p>
-            </article>
-            <article class="glass-panel alliance-card">
-              <span>Atención</span>
-              <strong>Ruta de acción hecha para la operación real.</strong>
-              <p>No usamos respuestas genéricas ni paquetes cerrados. Ajustamos cada plan al punto de riesgo concreto.</p>
-            </article>
-            <article class="glass-panel alliance-card">
-              <span>Ejecución</span>
-              <strong>Implementación con prioridad y trazabilidad.</strong>
-              <p>Ordenamos documentos, responsables y siguientes pasos para que la decisión no quede solo en una recomendación.</p>
-            </article>
-            <article class="glass-panel alliance-card alliance-brand-card">
-              <img src="Logo.jpeg" alt="Identidad de Alianza" width="640" height="647" loading="lazy" decoding="async">
-              <div>
-                <span>Presencia</span>
-                <strong>Firma estrategica, cercana y operativa.</strong>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="alliance-process reveal-up">
-        <div class="process-step">
-          <span>Escuchar</span>
-          <p>Entendemos el negocio, la urgencia y el contexto regulatorio real.</p>
-        </div>
-        <div class="process-step">
-          <span>Ordenar</span>
-          <p>Separamos contingencia, oportunidad y trámite crítico para actuar con foco.</p>
-        </div>
-        <div class="process-step">
-          <span>Ejecutar</span>
-          <p>Preparamos documentos, respuestas y decisiones con respaldo técnico.</p>
-        </div>
-        <div class="process-step">
-          <span>Sostener</span>
-          <p>Dejamos una estructura que soporte crecimiento, control y fiscalización.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
        8. SECCIÓN CONTACTO / AGENDAMIENTO (FORMULARIO CON SELECCIONADOR)
        ========================================================================= -->
   <section id="contacto" class="section-shell section-shell-contact py-24 relative z-10 overflow-hidden" data-spotlight>
@@ -960,9 +836,8 @@
           <ul class="space-y-2 p-0 list-none text-xs">
             <li><a href="#inicio" class="text-slate-400 hover:text-gold no-underline transition-colors">Inicio</a></li>
             <li><a href="#servicios" class="text-slate-400 hover:text-gold no-underline transition-colors">Especialidades</a></li>
-            <li><a href="#experiencia" class="text-slate-400 hover:text-gold no-underline transition-colors">Experiencia</a></li>
+            <li><a href="#servicios-detalle" class="text-slate-400 hover:text-gold no-underline transition-colors">Servicios</a></li>
             <li><a href="#diagnostico" class="text-slate-400 hover:text-gold no-underline transition-colors">Diagnóstico Fiscal</a></li>
-            <li><a href="#nosotros" class="text-slate-400 hover:text-gold no-underline transition-colors">Diferencial</a></li>
             <li><a href="#contacto" class="text-slate-400 hover:text-gold no-underline transition-colors">Agendar Cita</a></li>
           </ul>
         </div>
@@ -1030,6 +905,55 @@
           toggleBtn.setAttribute('aria-expanded', 'false');
           menuContainer.classList.add('hidden');
         });
+      });
+    }
+  </script>
+
+  <script>
+    const servicesCarousel = document.querySelector('[data-services-carousel]');
+
+    if (servicesCarousel) {
+      const viewport = servicesCarousel.querySelector('[data-services-viewport]');
+      const prevBtn = servicesCarousel.querySelector('[data-services-prev]');
+      const nextBtn = servicesCarousel.querySelector('[data-services-next]');
+
+      const getScrollAmount = () => {
+        const firstCard = viewport?.querySelector('.services-catalog-card');
+        const track = viewport?.querySelector('.services-catalog-grid');
+
+        if (!firstCard || !track) return 0;
+
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const trackStyles = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0');
+        return cardWidth + gap;
+      };
+
+      const maxScrollLeft = () => {
+        if (!viewport) return 0;
+        return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        if (!viewport) return;
+
+        if (viewport.scrollLeft <= 8) {
+          viewport.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' });
+          return;
+        }
+
+        viewport.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        if (!viewport) return;
+
+        if (viewport.scrollLeft >= maxScrollLeft() - 8) {
+          viewport.scrollTo({ left: 0, behavior: 'smooth' });
+          return;
+        }
+
+        viewport.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
       });
     }
   </script>
