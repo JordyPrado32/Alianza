@@ -86,6 +86,9 @@
             'gold-dark': '#AA7C11',
             teal: '#00A896',
             'teal-light': '#028090',
+            'form-blue': '#2563EB',
+            'form-blue-light': '#60A5FA',
+            'form-blue-dark': '#1D4ED8',
             'slate-gray': '#8F9FA9',
           },
           fontFamily: {
@@ -277,7 +280,7 @@
   <!-- =========================================================================
        4. SECCIÓN SERVICIOS (GRID INTERACTIVO, CARTAS PREMIUM CON IMÁGENES)
        ========================================================================= -->
-  <section id="servicios" class="section-shell section-shell-services py-24 relative z-10 overflow-hidden" data-spotlight>
+  <section id="servicios" class="section-shell section-theme-light section-shell-services py-24 relative z-10 overflow-hidden" data-spotlight>
     <div class="hero-gradient-mesh section-gradient-mesh"></div>
     <div class="hero-grid-overlay section-grid-overlay"></div>
     <div class="hero-spotlight section-spotlight"></div>
@@ -454,15 +457,48 @@
   <!-- =========================================================================
        6. SECCIÓN SIMULADOR TRIBUTARIO / DIAGNÓSTICO INTERACTIVO
        ========================================================================= -->
-  <section id="diagnostico" class="section-shell section-shell-diagnostic py-24 relative z-10 overflow-hidden" data-spotlight>
+  <section id="diagnostico" class="section-shell section-theme-light section-shell-diagnostic py-24 relative z-10 overflow-hidden" data-spotlight>
     <div class="hero-gradient-mesh section-gradient-mesh"></div>
     <div class="hero-grid-overlay section-grid-overlay"></div>
     <div class="hero-spotlight section-spotlight"></div>
     <div class="section-bg-media section-bg-media-diagnostic">
       <img src="images/hero_bg.jpg" alt="" aria-hidden="true" width="1024" height="1024" loading="lazy" decoding="async">
     </div>
-    <div class="section-content max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-panel sim-shell p-8 sm:p-12 relative overflow-hidden border border-white/10 shadow-2xl reveal-up">
+    <div class="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="diagnostic-layout reveal-up">
+        <div class="diagnostic-copy">
+          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase mb-3">Diagnóstico fiscal</span>
+          <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-5">Antes de decidir, mida el riesgo y el siguiente movimiento.</h3>
+          <p class="text-slate-300 font-light leading-relaxed mb-6">
+            No es un test decorativo: es una lectura inicial para ubicar su perfil, volumen de operación y urgencia principal antes de agendar una asesoría.
+          </p>
+
+          <div class="diagnostic-proof-grid">
+            <div>
+              <span>01</span>
+              <strong>Perfil</strong>
+              <p>Persona natural, pyme local o estructura extranjera.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>Exposición</strong>
+              <p>Volumen aproximado y complejidad tributaria.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Ruta</strong>
+              <p>Primer frente fiscal, legal o contable a ordenar.</p>
+            </div>
+          </div>
+
+          <div class="diagnostic-note">
+            <span>Resultado inmediato</span>
+            <p>Al finalizar, el formulario de contacto queda preconfigurado con el diagnóstico recomendado.</p>
+          </div>
+        </div>
+
+        <div class="diagnostic-tool-column">
+          <div class="glass-panel sim-shell p-6 sm:p-8 relative overflow-hidden border border-white/10 shadow-2xl">
         <div class="sim-shell-glow sim-shell-glow-a"></div>
         <div class="sim-shell-glow sim-shell-glow-b"></div>
         <div class="sim-panel-corner sim-panel-corner-tl"></div>
@@ -471,18 +507,18 @@
         <div class="sim-panel-corner sim-panel-corner-br"></div>
         
         <!-- Detalles visuales de fondo -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal via-gold to-teal"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-form-blue via-gold to-form-blue"></div>
         <div class="sim-shell-headerline">
           <span>Expediente 01</span>
           <span>Lectura en menos de 90 segundos</span>
         </div>
 
         <!-- Encabezado del Asistente -->
-        <div class="text-center mb-8">
-          <span class="section-kicker text-xs font-bold tracking-widest text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20">Herramienta Interactiva</span>
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-4">Diagnóstico Preliminar Societario y Fiscal</h3>
+        <div class="diagnostic-tool-head mb-6">
+          <span>Herramienta interactiva</span>
+          <h3 class="text-2xl font-extrabold text-white mt-3">Diagnóstico preliminar</h3>
           <p class="text-sm text-slate-300 mt-2 font-light">
-            Responda 3 preguntas básicas y nuestro algoritmo configurará las prioridades estratégicas y el régimen ideal para su negocio en Ecuador.
+            Responda 3 preguntas y obtenga una ruta inicial para su caso.
           </p>
         </div>
 
@@ -627,7 +663,7 @@
             <div class="sim-result-card p-6 mb-6">
               <div class="sim-result-head">
                 <span class="sim-result-chip">Lectura inicial completada</span>
-                <h4 class="text-xs font-bold text-teal tracking-widest uppercase mb-1">Estrategia Recomendada</h4>
+                <h4 class="text-xs font-bold text-form-blue tracking-widest uppercase mb-1">Estrategia Recomendada</h4>
               </div>
               <h5 class="text-xl font-bold text-white mb-4" id="sim-result-title">Analizando parámetros...</h5>
               <p class="text-sm text-slate-300 font-light leading-relaxed mb-4" id="sim-result-desc">
@@ -649,6 +685,8 @@
 
         </div>
 
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -656,7 +694,7 @@
   <!-- =========================================================================
        8. SECCIÓN CONTACTO / AGENDAMIENTO (FORMULARIO CON SELECCIONADOR)
        ========================================================================= -->
-  <section id="contacto" class="section-shell section-shell-contact py-24 relative z-10 overflow-hidden" data-spotlight>
+  <section id="contacto" class="section-shell section-theme-dark section-shell-contact py-24 relative z-10 overflow-hidden" data-spotlight>
     <div class="hero-gradient-mesh section-gradient-mesh"></div>
     <div class="hero-grid-overlay section-grid-overlay"></div>
     <div class="hero-spotlight section-spotlight"></div>
@@ -676,8 +714,8 @@
 
           <div class="contact-detail-list space-y-4">
             <div class="contact-detail-item flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center border border-teal/20 flex-shrink-0">
-                <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14"/></svg>
+              <div class="w-10 h-10 rounded-lg bg-form-blue/10 flex items-center justify-center border border-form-blue/20 flex-shrink-0">
+                <svg class="w-5 h-5 text-form-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14"/></svg>
               </div>
               <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Modalidad</h4>
@@ -692,14 +730,14 @@
               </div>
               <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Correo Electrónico</h4>
-                <a href="mailto:alianzatributaria9@gmail.com" class="text-sm text-teal hover:underline no-underline font-medium">alianzatributaria9@gmail.com</a>
+                <a href="mailto:alianzatributaria9@gmail.com" class="text-sm text-form-blue hover:underline no-underline font-medium">alianzatributaria9@gmail.com</a>
               </div>
             </div>
 
             <div class="contact-detail-item flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center border border-teal/20 flex-shrink-0">
+              <div class="w-10 h-10 rounded-lg bg-form-blue/10 flex items-center justify-center border border-form-blue/20 flex-shrink-0">
                 <!-- Phone Icon -->
-                <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg class="w-5 h-5 text-form-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
               <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Atención Directa</h4>
