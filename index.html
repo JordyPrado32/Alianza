@@ -942,6 +942,8 @@
       const viewport = servicesCarousel.querySelector('[data-services-viewport]');
       const prevBtn = servicesCarousel.querySelector('[data-services-prev]');
       const nextBtn = servicesCarousel.querySelector('[data-services-next]');
+      let autoplayId = null;
+      const autoplayDelay = 3500;
 
       const getScrollAmount = () => {
         const firstCard = viewport?.querySelector('.services-catalog-card');
@@ -960,7 +962,7 @@
         return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
       };
 
-      prevBtn?.addEventListener('click', () => {
+      const movePrev = () => {
         if (!viewport) return;
 
         if (viewport.scrollLeft <= 8) {
@@ -969,9 +971,9 @@
         }
 
         viewport.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-      });
+      };
 
-      nextBtn?.addEventListener('click', () => {
+      const moveNext = () => {
         if (!viewport) return;
 
         if (viewport.scrollLeft >= maxScrollLeft() - 8) {
@@ -980,7 +982,32 @@
         }
 
         viewport.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      };
+
+      const stopAutoplay = () => {
+        if (!autoplayId) return;
+        window.clearInterval(autoplayId);
+        autoplayId = null;
+      };
+
+      const startAutoplay = () => {
+        if (!viewport || autoplayId) return;
+        autoplayId = window.setInterval(moveNext, autoplayDelay);
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        stopAutoplay();
+        movePrev();
+        startAutoplay();
       });
+
+      nextBtn?.addEventListener('click', () => {
+        stopAutoplay();
+        moveNext();
+        startAutoplay();
+      });
+
+      startAutoplay();
     }
   </script>
 </body>
