@@ -942,12 +942,14 @@
       const viewport = servicesCarousel.querySelector('[data-services-viewport]');
       const prevBtn = servicesCarousel.querySelector('[data-services-prev]');
       const nextBtn = servicesCarousel.querySelector('[data-services-next]');
-      let autoplayId = null;
-      const autoplayDelay = 3500;
+      const track = viewport?.querySelector('.services-catalog-grid');
+      let animationId = null;
+      let resumeAutoplayId = null;
+      let lastFrameTime = 0;
+      const pixelsPerSecond = 32;
 
       const getScrollAmount = () => {
         const firstCard = viewport?.querySelector('.services-catalog-card');
-        const track = viewport?.querySelector('.services-catalog-grid');
 
         if (!firstCard || !track) return 0;
 
@@ -957,56 +959,97 @@
         return cardWidth + gap;
       };
 
-      const maxScrollLeft = () => {
-        if (!viewport) return 0;
-        return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      const getLoopWidth = () => {
+        if (!track) return 0;
+        return track.scrollWidth / 2;
+      };
+
+      const normalizeLoopPosition = () => {
+        if (!viewport) return;
+
+        const loopWidth = getLoopWidth();
+        if (!loopWidth) return;
+
+        if (viewport.scrollLeft < 0) {
+          viewport.scrollLeft += loopWidth;
+        } else if (viewport.scrollLeft >= loopWidth) {
+          viewport.scrollLeft -= loopWidth;
+        }
+      };
+
+      const duplicateCardsForLoop = () => {
+        if (!track || track.dataset.loopReady === 'true') return;
+
+        Array.from(track.children).forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        });
+
+        track.dataset.loopReady = 'true';
       };
 
       const movePrev = () => {
         if (!viewport) return;
-
-        if (viewport.scrollLeft <= 8) {
-          viewport.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' });
-          return;
-        }
-
         viewport.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+
+        window.setTimeout(normalizeLoopPosition, 450);
       };
 
       const moveNext = () => {
         if (!viewport) return;
-
-        if (viewport.scrollLeft >= maxScrollLeft() - 8) {
-          viewport.scrollTo({ left: 0, behavior: 'smooth' });
-          return;
-        }
-
         viewport.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+
+        window.setTimeout(normalizeLoopPosition, 450);
       };
 
       const stopAutoplay = () => {
-        if (!autoplayId) return;
-        window.clearInterval(autoplayId);
-        autoplayId = null;
+        if (animationId) {
+          window.cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+
+        if (resumeAutoplayId) {
+          window.clearTimeout(resumeAutoplayId);
+          resumeAutoplayId = null;
+        }
+
+        lastFrameTime = 0;
+      };
+
+      const animateCarousel = timestamp => {
+        if (!viewport) return;
+
+        if (!lastFrameTime) lastFrameTime = timestamp;
+
+        const delta = timestamp - lastFrameTime;
+        lastFrameTime = timestamp;
+        viewport.scrollLeft += (pixelsPerSecond * delta) / 1000;
+        normalizeLoopPosition();
+        animationId = window.requestAnimationFrame(animateCarousel);
       };
 
       const startAutoplay = () => {
-        if (!viewport || autoplayId) return;
-        autoplayId = window.setInterval(moveNext, autoplayDelay);
+        if (!viewport || animationId) return;
+        animationId = window.requestAnimationFrame(animateCarousel);
       };
 
       prevBtn?.addEventListener('click', () => {
         stopAutoplay();
         movePrev();
-        startAutoplay();
+        resumeAutoplayId = window.setTimeout(startAutoplay, 500);
       });
 
       nextBtn?.addEventListener('click', () => {
         stopAutoplay();
         moveNext();
-        startAutoplay();
+        resumeAutoplayId = window.setTimeout(startAutoplay, 500);
       });
 
+      duplicateCardsForLoop();
+      if (viewport) {
+        viewport.style.scrollSnapType = 'none';
+      }
       startAutoplay();
     }
   </script>
