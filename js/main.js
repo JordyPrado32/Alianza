@@ -29,10 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set('.hero-title span', { opacity: 0, y: 22 });
     gsap.set('.hero-desc, .hero-ctas', { opacity: 0, y: 14 });
     gsap.set('.hero-proof-row > div', { opacity: 0, y: 12 });
-    gsap.set('.hero-main-card', { opacity: 0, scale: 0.94, rotate: -1 });
-    gsap.set('.floating-chip', { opacity: 0, y: 12 });
-    gsap.set('.dossier-card', { opacity: 0, x: 22 });
-    gsap.set('.hero-image-tile', { opacity: 0, x: -22 });
+    gsap.set('.hero-main-card', { opacity: 0, scale: 0.96, x: 18 });
+    gsap.set('.hero-brief-copy > *', { opacity: 0, y: 12 });
   };
   // 1. PRELOADER Y ANIMACIÓN DE ENTRADA (GSAP)
   const runPreloader = () => {
@@ -41,34 +39,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressValue = document.querySelector('.preloader-progress-value');
     const title = document.querySelector('.preloader-text');
     const tagline = document.querySelector('.preloader-tagline');
-    const logo = document.querySelector('.preloader-climb-logo');
-    const steps = document.querySelectorAll('.preloader-step');
+    const eyebrow = document.querySelector('.preloader-eyebrow');
+    const seal = document.querySelector('.preloader-seal');
+    const rings = document.querySelectorAll('.preloader-seal-ring');
     const progressUI = document.querySelectorAll('.preloader-progress-bar, .preloader-progress-meta');
     
     if (!preloader || pageIsReady || !windowLoaded || preloaderStarted) return;
     preloaderStarted = true;
 
-    gsap.set([title, tagline, ...progressUI], { opacity: 0, y: 14 });
-    gsap.set(steps, { opacity: 0, y: 10 });
-    if (logo) gsap.set(logo, { animation: 'none', opacity: 1, x: 0, y: 0, scale: 0.94, rotate: -4 });
+    gsap.set([eyebrow, title, tagline, ...progressUI], { opacity: 0, y: 12 });
+    gsap.set(rings, { opacity: 0, scale: 0.78, rotate: -12 });
+    if (seal) gsap.set(seal, { animation: 'none', opacity: 0, scale: 0.72 });
     setHeroInitialState();
 
     gsap.timeline()
-      .to(steps, { opacity: 1, y: 0, stagger: 0.06, duration: 0.32, ease: 'power2.out' })
+      .to(rings, { opacity: 1, scale: 1, rotate: 0, stagger: 0.08, duration: 0.55, ease: 'power3.out' })
+      .to(seal, { opacity: 1, scale: 1, duration: 0.48, ease: 'back.out(1.35)' }, '-=0.34')
+      .to(eyebrow, { opacity: 1, y: 0, duration: 0.32, ease: 'power2.out' }, '-=0.24')
       .to(title, { opacity: 1, y: 0, duration: 0.36, ease: 'power2.out' }, '-=0.2')
       .to(tagline, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.2')
       .to(progressUI, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.16');
 
-    const climbTimeline = gsap.timeline({ repeat: -1, repeatDelay: 0.1, delay: 0.15 });
-    if (logo) {
-      climbTimeline
-        .to(logo, { x: 74, y: -32, rotate: 4, scale: 1, duration: 0.28, ease: 'power2.inOut' })
-        .to(logo, { x: 148, y: -64, rotate: -3, duration: 0.28, ease: 'power2.inOut' })
-        .to(logo, { x: 222, y: -96, rotate: 3, duration: 0.28, ease: 'power2.inOut' })
-        .to(logo, { x: 296, y: -128, rotate: 0, scale: 1.04, duration: 0.32, ease: 'power2.inOut' })
-        .to(logo, { opacity: 0.5, scale: 0.92, duration: 0.24, ease: 'power2.in' })
-        .set(logo, { x: 0, y: 0, opacity: 1, scale: 0.94, rotate: -4 });
-    }
+    const sealTimeline = gsap.timeline({ repeat: -1, yoyo: true, delay: 0.3 });
+    if (seal) sealTimeline.to(seal, { scale: 1.035, duration: 0.9, ease: 'sine.inOut' });
 
     // Animación de barra de progreso ficticia
     let progress = 0;
@@ -78,17 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         progress = 100;
         clearInterval(interval);
         
-        climbTimeline.pause();
+        sealTimeline.pause();
 
         const tl = gsap.timeline();
         
-        tl.to(logo, { opacity: 1, x: 296, y: -128, scale: 1.05, rotate: 0, duration: 0.42, ease: 'power3.out' })
-          .to('.preloader-step-5', { borderColor: 'rgba(212, 175, 55, 0.58)', boxShadow: '0 18px 42px rgba(212, 175, 55, 0.16)' }, '-=0.28')
+        tl.to(seal, { opacity: 1, scale: 1.08, duration: 0.38, ease: 'power3.out' })
+          .to(rings, { scale: 1.08, opacity: 0.35, duration: 0.38, ease: 'power3.out' }, '-=0.38')
           .to(preloader, { 
             opacity: 0,
-            scale: 1.04,
-            duration: 0.7,
-            delay: 0.35,
+            scale: 1.02,
+            duration: 0.62,
+            delay: 0.18,
             ease: 'power4.inOut',
             onComplete: () => {
               document.body.classList.add('hero-gsap-ready');
@@ -117,10 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .to('.hero-desc', { opacity: 1, y: 0, duration: 0.36, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.28')
       .to('.hero-ctas', { opacity: 1, y: 0, duration: 0.36, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.25')
       .to('.hero-proof-row > div', { opacity: 1, y: 0, stagger: 0.04, duration: 0.32, ease: 'power2.out', clearProps: 'opacity,transform' }, '-=0.22')
-      .to('.hero-main-card', { opacity: 1, scale: 1, rotate: 0, duration: 0.48, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.5')
-      .to('.floating-chip', { opacity: 1, y: 0, stagger: 0.05, duration: 0.3, ease: 'back.out(1.25)', clearProps: 'opacity,transform' }, '-=0.22')
-      .to('.dossier-card', { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.28')
-      .to('.hero-image-tile', { opacity: 1, x: 0, duration: 0.38, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.3');
+      .to('.hero-main-card', { opacity: 1, scale: 1, x: 0, duration: 0.52, ease: 'power3.out', clearProps: 'opacity,transform' }, '-=0.48')
+      .to('.hero-brief-copy > *', { opacity: 1, y: 0, stagger: 0.05, duration: 0.32, ease: 'power2.out', clearProps: 'opacity,transform' }, '-=0.24');
   };
 
   const setupRevealFallback = () => {
@@ -161,6 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (progressValue) {
       progressValue.textContent = '100%';
     }
+
+    document.querySelectorAll('.preloader-eyebrow, .preloader-text, .preloader-tagline, .preloader-progress-bar, .preloader-progress-meta')
+      .forEach((element) => {
+        element.style.opacity = '1';
+        element.style.transform = 'none';
+      });
 
     window.setTimeout(() => {
       hidePreloader();
