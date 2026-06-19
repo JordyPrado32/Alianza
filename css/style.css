@@ -1652,6 +1652,40 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 26px 70px rgba(0, 4, 17, 0.34);
 }
 
+.section-cta-band {
+  margin: 3rem auto 0;
+  max-width: 64rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.3rem 1.45rem;
+  border: 1px solid rgba(10, 17, 40, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(245, 249, 255, 0.74)),
+    rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 60px rgba(18, 26, 46, 0.12);
+}
+
+.section-cta-band span,
+.section-cta-band strong {
+  display: block;
+}
+
+.section-cta-band span {
+  color: var(--color-gold-dark);
+  font: 800 0.72rem/1 var(--font-title);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.section-cta-band strong {
+  color: #071124;
+  font: 800 1.05rem/1.35 var(--font-title);
+}
+
 .services-carousel {
   margin-top: 0.75rem;
 }
@@ -3257,6 +3291,11 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(10, 17, 40, 0.13);
 }
 
+.site-theme-light .hero-focus-row {
+  gap: 0.85rem !important;
+  border: 0;
+}
+
 .site-theme-light .hero-proof-row > div {
   min-height: 92px;
   padding: 1rem 1.1rem;
@@ -3271,16 +3310,68 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 
+.site-theme-light .hero-focus-row > .hero-focus-card,
+.site-theme-light .hero-focus-row > .hero-focus-card:first-child {
+  position: relative;
+  min-height: 190px;
+  padding: 1.1rem;
+  border: 1px solid rgba(10, 17, 40, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74)),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 42px rgba(18, 26, 46, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
+}
+
+.site-theme-light .hero-focus-row > .hero-focus-card::before {
+  content: "";
+  width: 34px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold), var(--color-cyan));
+}
+
 .site-theme-light .hero-proof-row strong {
   color: var(--color-gold-dark);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
 }
 
+.site-theme-light .hero-focus-row strong {
+  color: #071124;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
 .site-theme-light .hero-proof-row span {
   color: rgba(15, 23, 42, 0.75);
   font-size: 0.72rem;
   line-height: 1.45;
+}
+
+.site-theme-light .hero-focus-row span {
+  color: rgba(15, 23, 42, 0.74);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.hero-focus-link {
+  margin-top: auto;
+  color: var(--color-gold-dark);
+  font: 800 0.72rem/1 var(--font-title);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-focus-link:hover,
+.hero-focus-link:focus-visible {
+  color: var(--color-teal-light);
+  transform: translateX(3px);
 }
 
 .hero-brief-stage {
@@ -3413,6 +3504,30 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(15, 23, 42, 0.58);
   font-size: 0.58rem;
   line-height: 1.35;
+}
+
+.hero-brief-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 1.25rem;
+  color: #071124;
+  border: 1px solid rgba(154, 112, 14, 0.28);
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.8));
+  font: 800 0.76rem/1 var(--font-title);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hero-brief-link:hover,
+.hero-brief-link:focus-visible {
+  color: #071124;
+  transform: translateY(-2px);
+  border-color: rgba(154, 112, 14, 0.5);
+  box-shadow: 0 12px 28px rgba(154, 112, 14, 0.14);
 }
 
 body.page-loaded:not(.hero-gsap-ready) .hero-badge,
@@ -3878,6 +3993,21 @@ body.page-loaded:not(.hero-gsap-ready) .hero-brief-card { animation-delay: 0.36s
 
   .site-theme-light .hero-proof-row > div:first-child {
     border-top: 0;
+  }
+
+  .site-theme-light .hero-focus-row > .hero-focus-card,
+  .site-theme-light .hero-focus-row > .hero-focus-card:first-child {
+    padding: 1rem;
+    border: 1px solid rgba(10, 17, 40, 0.12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .section-cta-band {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding: 1.15rem;
   }
 
   .hero-brief-stage {
